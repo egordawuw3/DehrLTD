@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- ================= SEO & МЕТА ================= -->
+    <title>DEHR Ltd | Strategic Workforce Solutions | Работа в Израиле</title>
+    <meta name="description" content="Лицензированное кадровое агентство DEHR Ltd. Комплексное юридическое сопровождение, подбор персонала и лучшие вакансии в Израиле." />
+    <meta name="keywords" content="работа в Израиле, трудоустройство в Израиле, рекрутинг, кадровое агентство, вакансии Израиль, jobs in Israel, DEHR Ltd" />
+    <meta name="author" content="DEHR Ltd" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#2563eb" />
+    <link rel="canonical" href="https://dehr.ltd/" />
+
+    <!-- Ускорение загрузки (Preconnect) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="preconnect" href="https://basemaps.cartocdn.com" />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="DEHR Ltd" />
+    <meta property="og:title" content="DEHR Ltd | Трудовые Ресурсы. Надёжно." />
+    <meta property="og:description" content="Надежный персонал и полное юридическое сопровождение для вашего бизнеса. Открытые вакансии в Израиле." />
+    <meta property="og:url" content="https://dehr.ltd/" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&fm=webp" />
+    <meta property="og:image:alt" content="Команда DEHR Ltd" />
+
+    <!-- Schema.org Microdata -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EmploymentAgency",
+      "name": "DEHR Ltd",
+      "url": "https://dehr.ltd/",
+      "description": "Лицензированное кадровое агентство в Израиле. Поиск партнеров и рекрутинг.",
+      "address": { "@type": "PostalAddress", "addressCountry": "IL" },
+      "contactPoint": { "@type": "ContactPoint", "contactType": "Customer Service", "url": "https://t.me/winchesteroff" }
+    }
+    </script>
+
+    <!-- Подключение библиотек -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;0,800;1,500;1,800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+
+    <!-- Настройки Tailwind -->
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: { sans: ['"Plus Jakarta Sans"', "sans-serif"] },
+            colors: { brand: "#2563eb", dark: "#050505", surface: "#0f0f10" },
+          },
+        },
+      };
+    </script>
+
+    <!-- Подключение стилей -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-[#F2F4F7] text-slate-900 dark:bg-dark dark:text-white antialiased selection:bg-brand selection:text-white transition-colors duration-300">
+    
+    <!-- ================= НАВИГАЦИЯ ================= -->
+    <header class="fixed top-0 w-full z-40 px-4 md:px-6 py-4 md:py-6 pointer-events-none">
+      <div class="max-w-[1440px] mx-auto glass rounded-full px-6 md:px-8 py-4 md:py-5 flex justify-between items-center shadow-xl shadow-black/5 pointer-events-auto transition-transform duration-300" id="main-header">
+        <div class="flex items-center gap-8 xl:gap-12">
+          <a href="#" class="text-2xl md:text-3xl font-black italic tracking-tighter uppercase leading-none" aria-label="Home">
+            DEHR<span class="text-brand">.Ltd</span>
+          </a>
+          <nav class="hidden lg:flex gap-6 xl:gap-8 text-[11px] font-black uppercase tracking-[0.15em] text-slate-500 dark:text-slate-400" dir="ltr">
+            <a href="#about" data-i18n="nav_about" class="hover:text-brand transition-colors">О Компании</a>
+            <a href="#vacancies" data-i18n="nav_vacancies" class="hover:text-brand transition-colors">Вакансии</a>
+            <a href="#principles" data-i18n="nav_principles" class="hover:text-brand transition-colors">Принципы</a>
+            <a href="#employers" data-i18n="nav_employers" class="hover:text-brand transition-colors">Работодателям</a>
+            <a href="#recruiting" data-i18n="nav_recruiting" class="hover:text-brand transition-colors">Рекрутерам</a>
+          </nav>
+        </div>
+        <div class="flex items-center gap-4 md:gap-6">
+          <div class="hidden sm:flex gap-4 text-[11px] font-black uppercase border-r-2 border-slate-200 dark:border-zinc-800 px-4 md:px-6">
+            <button onclick="setLang('ru')" class="lang-btn text-brand font-bold transition-colors" aria-label="Russian">RU</button>
+            <button onclick="setLang('en')" class="lang-btn text-slate-500 dark:text-slate-400 hover:text-brand transition-colors" aria-label="English">EN</button>
+            <button onclick="setLang('he')" class="lang-btn text-slate-500 dark:text-slate-400 hover:text-brand transition-colors" aria-label="Hebrew">HE</button>
+          </div>
+          <button class="theme-toggle hidden sm:block p-2 md:p-3 bg-slate-100 dark:bg-zinc-800 rounded-full hover:bg-brand hover:text-white transition-all" aria-label="Toggle Theme">
+            <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
+            <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
+          </button>
+          <a href="#contact" data-i18n="btn_contact" class="hidden md:block bg-black dark:bg-white dark:text-black text-white px-8 py-3 rounded-full text-[11px] font-black uppercase tracking-[0.15em] hover:bg-brand dark:hover:bg-brand dark:hover:text-white transition-colors">
+            Связаться
+          </a>
+          <button id="mobile-menu-btn" class="block lg:hidden p-2 text-slate-900 dark:text-white bg-slate-100 dark:bg-zinc-800 rounded-full" aria-label="Open mobile menu">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= МОБИЛЬНОЕ МЕНЮ ================= -->
+    <div id="mobile-menu" class="fixed inset-0 bg-[#F2F4F7] dark:bg-black z-[100] transform -translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.85,0,0.15,1)] flex flex-col">
+      <div class="px-6 py-6 flex justify-between items-center border-b border-slate-200 dark:border-zinc-800">
+        <a href="#" class="text-2xl font-black italic tracking-tighter uppercase leading-none mobile-link-close" aria-label="Home">
+          DEHR<span class="text-brand">.Ltd</span>
+        </a>
+        <div class="flex items-center gap-4">
+          <button class="theme-toggle p-3 bg-white dark:bg-zinc-900 rounded-full shadow-sm text-slate-900 dark:text-white" aria-label="Toggle Theme">
+            <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
+            <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
+          </button>
+          <button id="close-menu-btn" class="p-3 bg-white dark:bg-zinc-900 rounded-full shadow-sm text-slate-900 dark:text-white" aria-label="Close menu">
+            <i data-lucide="x" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+      <nav class="flex-grow flex flex-col justify-center items-center gap-8 text-2xl font-black uppercase tracking-widest text-slate-900 dark:text-white" dir="ltr">
+        <a href="#about" data-i18n="nav_about" class="mobile-link opacity-0 translate-y-4 transition-all duration-500 delay-100 hover:text-brand">О Компании</a>
+        <a href="#vacancies" data-i18n="nav_vacancies" class="mobile-link opacity-0 translate-y-4 transition-all duration-500 delay-150 hover:text-brand">Вакансии</a>
+        <a href="#principles" data-i18n="nav_principles" class="mobile-link opacity-0 translate-y-4 transition-all duration-500 delay-200 hover:text-brand">Принципы</a>
+        <a href="#employers" data-i18n="nav_employers" class="mobile-link opacity-0 translate-y-4 transition-all duration-500 delay-250 hover:text-brand">Работодателям</a>
+        <a href="#recruiting" data-i18n="nav_recruiting" class="mobile-link opacity-0 translate-y-4 transition-all duration-500 delay-300 hover:text-brand">Рекрутинг</a>
+      </nav>
+      <div class="px-6 py-10 flex justify-center gap-8 text-lg font-black uppercase border-t border-slate-200 dark:border-zinc-800">
+        <button onclick="setLang('ru')" class="lang-btn text-brand font-bold mobile-link-close" aria-label="RU">RU</button>
+        <button onclick="setLang('en')" class="lang-btn text-slate-500 dark:text-slate-400 mobile-link-close" aria-label="EN">EN</button>
+        <button onclick="setLang('he')" class="lang-btn text-slate-500 dark:text-slate-400 mobile-link-close" aria-label="HE">HE</button>
+      </div>
+    </div>
+
+    <main>
+        <!-- ================= HERO ================= -->
+        <section class="min-h-screen flex items-center pt-32 pb-20 px-4 md:px-6">
+          <div class="max-w-[1440px] mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full mt-10 md:mt-0">
+            <div class="min-w-0 reveal">
+              <span data-i18n="hero_subtitle" class="inline-block px-4 py-2 bg-brand/10 text-brand rounded-full font-black text-[10px] uppercase tracking-[0.3em] mb-6 md:mb-8">
+                Strategic Workforce Solutions
+              </span>
+              <h1 class="text-[clamp(3.2rem,8vw,7rem)] lg:text-[clamp(3rem,4.5vw,7rem)] font-black uppercase mb-6 md:mb-8 italic leading-[0.9] tracking-tight flex flex-col text-start">
+                <span data-i18n="hero_title_1" class="block">Трудовые</span>
+                <span data-i18n="hero_title_2" class="block text-slate-900 dark:text-white pb-1">Ресурсы.</span>
+                <span data-i18n="hero_title_3" class="text-brand block">Надёжно.</span>
+              </h1>
+              <p data-i18n="hero_desc" class="text-lg md:text-2xl text-slate-600 dark:text-slate-400 max-w-lg mb-10 font-bold leading-relaxed">
+                DEHR Ltd — лицензированная компания. Мы обеспечиваем работодателей проверенным персоналом и берём на себя <span class="text-brand">полное юридическое сопровождение</span>.
+              </p>
+              <div class="flex flex-wrap gap-8 md:gap-10 border-t-2 border-slate-200 dark:border-zinc-800 pt-8 md:pt-10">
+                <div>
+                  <span class="block text-4xl md:text-6xl font-black italic tracking-tighter text-slate-900 dark:text-white">10+</span>
+                  <p data-i18n="stat_1" class="text-[9px] md:text-[10px] uppercase font-black text-slate-500 dark:text-slate-400 mt-2 tracking-widest">Лет Опыта</p>
+                </div>
+                <div>
+                  <span class="block text-4xl md:text-6xl font-black italic tracking-tighter text-slate-900 dark:text-white">1000+</span>
+                  <p data-i18n="stat_2" class="text-[9px] md:text-[10px] uppercase font-black text-slate-500 dark:text-slate-400 mt-2 tracking-widest">Трудоустроено</p>
+                </div>
+                <div>
+                  <span class="block text-4xl md:text-6xl font-black italic tracking-tighter text-brand">100+</span>
+                  <p data-i18n="stat_3" class="text-[9px] md:text-[10px] uppercase font-black text-brand mt-2 tracking-widest">Клиентов</p>
+                </div>
+              </div>
+            </div>
+    
+            <div class="relative h-[400px] md:h-[600px] lg:h-[700px] w-full rounded-[2.5rem] lg:rounded-[3.5rem] overflow-hidden border-[6px] lg:border-[10px] border-white dark:border-zinc-800 shadow-2xl reveal reveal-delay-1">
+              <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&fm=webp" width="1200" height="800" fetchpriority="high" class="w-full h-full object-cover scale-105" alt="Команда DEHR" />
+              <div class="absolute bottom-4 left-4 right-4 md:bottom-8 md:left-8 md:right-8 bg-white/95 dark:bg-surface/95 backdrop-blur-md p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] shadow-xl border border-slate-100 dark:border-zinc-800 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 z-20">
+                <div>
+                  <div class="flex items-center gap-3 mb-2">
+                    <span class="w-3 h-3 bg-brand rounded-full animate-pulse"></span>
+                    <span data-i18n="hero_badge" class="text-[9px] md:text-[10px] font-black uppercase text-slate-500 dark:text-slate-400 tracking-widest">Лицензированное агентство</span>
+                  </div>
+                  <p data-i18n="hero_safe" class="text-base md:text-xl font-black italic uppercase leading-tight">
+                    Безопасно. Законно. <br /><span class="text-brand">Профессионально.</span>
+                  </p>
+                </div>
+                <div class="hidden sm:flex w-12 h-12 md:w-14 md:h-14 bg-brand text-white rounded-full items-center justify-center shrink-0">
+                  <i data-lucide="shield-check" class="w-6 h-6 md:w-7 md:h-7"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= 1. О КОМПАНИИ ================= -->
+        <section id="about" class="py-20 lg:py-32 px-4 md:px-6 bg-white dark:bg-zinc-900 border-y-2 border-slate-100 dark:border-zinc-800">
+          <div class="max-w-[1440px] mx-auto grid lg:grid-cols-3 gap-6 md:gap-8">
+            <div class="lg:col-span-2 bg-[#F2F4F7] dark:bg-black p-8 md:p-14 rounded-[2.5rem] lg:rounded-[3rem] flex flex-col justify-between min-h-[350px] lg:min-h-[400px] reveal">
+              <div>
+                <span data-i18n="nav_about" class="text-brand font-black text-[10px] md:text-[11px] uppercase tracking-[0.3em] block mb-4 md:mb-6 italic">О Компании</span>
+                <h2 data-i18n="about_title" class="text-4xl lg:text-6xl font-black uppercase italic tracking-tighter leading-[0.9] text-slate-900 dark:text-white mb-8 md:mb-10">История <br />Создания.</h2>
+                <div data-i18n="about_text" class="text-slate-600 dark:text-slate-400 font-bold space-y-4 md:space-y-5 text-sm md:text-base leading-relaxed max-w-3xl">
+                  <p>История DEHR Ltd началась задолго до официальной регистрации. Её основатель лично столкнулся с трудностями поиска работы: несоответствие ожиданий, языковые барьеры, отсутствие правильного оформления.</p>
+                  <p>Он увидел проблему с двух сторон. С одной — квалифицированные люди. С другой — компании, испытывающие острую потребность в надёжных сотрудниках.</p>
+                  <p>Постепенно помощь стала системной. Стало очевидно: необходима официальная структура.</p>
+                </div>
+                <div class="bg-white dark:bg-zinc-900 p-5 md:p-6 rounded-2xl border-l-4 border-brand mt-6 md:mt-8">
+                  <p data-i18n="about_quote" class="text-slate-900 dark:text-white italic text-base md:text-lg uppercase tracking-tight font-black">
+                    "Мы знаем проблему изнутри — потому что прошли этот путь сами."
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="bg-black dark:bg-surface p-8 md:p-12 rounded-[2.5rem] lg:rounded-[3rem] text-white flex flex-col justify-between relative overflow-hidden group reveal reveal-delay-1">
+              <div class="relative z-10 h-full flex flex-col">
+                <span data-i18n="mission" class="text-white/50 font-black text-[10px] md:text-[11px] uppercase tracking-[0.3em] block mb-4 md:mb-6 italic">Миссия</span>
+                <h3 data-i18n="mission_title" class="text-3xl lg:text-4xl font-black uppercase italic leading-tight mb-8">Создавать возможности там, <br />где были <span class="text-brand">барьеры.</span></h3>
+                <div class="mt-auto">
+                  <p data-i18n="mission_desc" class="text-white/80 font-bold text-sm leading-relaxed border-t border-white/10 pt-5 md:pt-6">
+                    Обеспечить работодателей надежными трудовыми ресурсами, создавая прозрачную и эффективную систему взаимодействия.
+                  </p>
+                </div>
+              </div>
+              <i data-lucide="target" class="absolute -right-10 -bottom-10 w-48 h-48 md:w-64 md:h-64 text-white/5 group-hover:text-brand/10 transition-colors duration-700"></i>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= 2. КАРТА И ПОКАЗАТЕЛИ ================= -->
+        <section id="map-section" class="py-20 lg:py-32 px-4 md:px-6 bg-[#F2F4F7] dark:bg-black border-b-2 border-slate-100 dark:border-zinc-800">
+          <div class="max-w-[1440px] mx-auto grid lg:grid-cols-12 gap-10 lg:gap-12">
+            <div class="lg:col-span-5 flex flex-col justify-center space-y-6 reveal">
+              <div>
+                <span data-i18n="stats_subtitle" class="text-brand font-black text-[10px] md:text-[11px] uppercase tracking-[0.3em] block mb-4 italic">Наши показатели</span>
+                <h2 data-i18n="stats_title" class="text-4xl md:text-5xl lg:text-6xl font-black italic uppercase tracking-tighter leading-none mb-8 md:mb-10 text-slate-900 dark:text-white">Опыт и <br /> <span class="text-brand">Стабильность.</span></h2>
+              </div>
+              <div class="p-6 md:p-8 bg-white dark:bg-surface rounded-[2rem] md:rounded-[2.5rem] flex items-center gap-4 md:gap-6 group hover:bg-brand transition-colors duration-500 card-hover">
+                <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 dark:bg-zinc-800 flex items-center justify-center group-hover:bg-white/20 shrink-0"><i data-lucide="handshake" class="w-5 h-5 md:w-6 md:h-6 text-brand group-hover:text-white"></i></div>
+                <div><h4 data-i18n="adv_1" class="text-lg md:text-xl font-black uppercase italic text-slate-900 dark:text-white group-hover:text-white">Долгосрочные Контракты</h4><p data-i18n="adv_1_d" class="text-[10px] md:text-[11px] font-bold uppercase text-slate-500 dark:text-slate-400 group-hover:text-white/70 mt-1">С ведущими работодателями</p></div>
+              </div>
+              <div class="p-6 md:p-8 bg-white dark:bg-surface rounded-[2rem] md:rounded-[2.5rem] flex items-center gap-4 md:gap-6 group hover:bg-brand transition-colors duration-500 card-hover">
+                <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 dark:bg-zinc-800 flex items-center justify-center group-hover:bg-white/20 shrink-0"><i data-lucide="trending-up" class="w-5 h-5 md:w-6 md:h-6 text-brand group-hover:text-white"></i></div>
+                <div><h4 data-i18n="adv_2" class="text-lg md:text-xl font-black uppercase italic text-slate-900 dark:text-white group-hover:text-white">Высокое Удержание</h4><p data-i18n="adv_2_d" class="text-[10px] md:text-[11px] font-bold uppercase text-slate-500 dark:text-slate-400 group-hover:text-white/70 mt-1">Минимальная текучесть кадров</p></div>
+              </div>
+              <div class="p-6 md:p-8 bg-white dark:bg-surface rounded-[2rem] md:rounded-[2.5rem] flex items-center gap-4 md:gap-6 group hover:bg-brand transition-colors duration-500 card-hover">
+                <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 dark:bg-zinc-800 flex items-center justify-center group-hover:bg-white/20 shrink-0"><i data-lucide="scale" class="w-5 h-5 md:w-6 md:h-6 text-brand group-hover:text-white"></i></div>
+                <div><h4 data-i18n="adv_3" class="text-lg md:text-xl font-black uppercase italic text-slate-900 dark:text-white group-hover:text-white">Полное Сопровождение</h4><p data-i18n="adv_3_d" class="text-[10px] md:text-[11px] font-bold uppercase text-slate-500 dark:text-slate-400 group-hover:text-white/70 mt-1">Абсолютная юридическая чистота</p></div>
+              </div>
+            </div>
+            <div class="lg:col-span-7 h-[400px] lg:h-[600px] relative reveal reveal-delay-1">
+              <div class="h-full w-full rounded-[2.5rem] lg:rounded-[3rem] overflow-hidden border-[6px] lg:border-[10px] border-white dark:border-surface shadow-2xl relative">
+                <div id="map"></div>
+                <div class="absolute top-4 right-4 lg:top-8 lg:right-8 bg-white/90 dark:bg-black/90 backdrop-blur-md p-4 lg:p-6 rounded-[1.5rem] lg:rounded-[2rem] z-[400] shadow-lg">
+                  <div class="flex items-center gap-3 lg:gap-4 mb-2 lg:mb-3"><span class="w-3 h-3 bg-brand rounded-full"></span><span data-i18n="map_vacancies" class="text-[9px] lg:text-[10px] font-black uppercase tracking-widest text-slate-900 dark:text-white">Вакансии</span></div>
+                  <div class="flex items-center gap-3 lg:gap-4"><span class="w-3 h-3 bg-red-500 rounded-full"></span><span data-i18n="map_points" class="text-[9px] lg:text-[10px] font-black uppercase tracking-widest text-slate-900 dark:text-white">Точки сбора</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= 3. ВАКАНСИИ ================= -->
+        <section id="vacancies" class="py-20 lg:py-32 px-4 md:px-6 bg-white dark:bg-zinc-900 border-b-2 border-slate-100 dark:border-zinc-800">
+          <div class="max-w-[1440px] mx-auto reveal">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-16 gap-6">
+              <h2 data-i18n="vacancies_title" class="text-4xl md:text-5xl lg:text-6xl font-black italic uppercase tracking-tighter leading-none text-slate-900 dark:text-white">Открытые <br /> Вакансии.</h2>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" id="vacancies-grid"></div>
+            <div class="mt-12 md:mt-16 flex justify-center" id="show-more-container">
+              <button onclick="showAllVacancies()" class="group inline-flex items-center gap-4 bg-[#F2F4F7] dark:bg-black text-slate-900 dark:text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-black uppercase text-[10px] md:text-[11px] tracking-[0.2em] hover:bg-brand hover:text-white dark:hover:bg-brand transition-all shadow-sm">
+                <span data-i18n="btn_show_more">Показать все вакансии</span>
+                <div class="w-8 h-8 rounded-full bg-white dark:bg-zinc-800 flex items-center justify-center group-hover:bg-white/20 transition-colors"><i data-lucide="chevron-down" class="w-4 h-4"></i></div>
+              </button>
+            </div>
+
+            <div class="mt-20 md:mt-32 reveal">
+              <span data-i18n="int_subtitle" class="text-brand font-black text-[10px] md:text-[11px] uppercase tracking-[0.3em] block mb-4 italic">International</span>
+              <h2 data-i18n="int_title" class="text-3xl md:text-5xl font-black italic uppercase tracking-tighter leading-none text-slate-900 dark:text-white mb-10 md:mb-12">Вакансии за <span class="text-brand">границей.</span></h2>
+              <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" id="int-vacancies-grid"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= 4. ПРИНЦИПЫ (FAQ) ================= -->
+        <section id="principles" class="py-20 lg:py-32 px-4 md:px-6 bg-[#F2F4F7] dark:bg-black border-b-2 border-slate-100 dark:border-zinc-800">
+          <div class="max-w-[1000px] mx-auto reveal">
+            <div class="text-center mb-10 md:mb-16">
+              <span data-i18n="prin_subtitle" class="text-brand font-black text-[10px] md:text-[11px] uppercase tracking-[0.3em] block mb-4 italic">Ценности</span>
+              <h2 data-i18n="nav_principles" class="text-4xl md:text-5xl lg:text-6xl font-black italic uppercase tracking-tighter leading-none text-slate-900 dark:text-white">Принципы <br /> Работы.</h2>
+            </div>
+            
+            <div class="space-y-4">
+              <div class="faq-item bg-white dark:bg-surface rounded-[2rem] md:rounded-[2.5rem] border border-slate-100 dark:border-zinc-800 overflow-hidden active shadow-sm">
+                <button aria-expanded="true" class="faq-btn w-full p-5 md:p-8 flex justify-between items-center text-left hover:text-brand transition-colors group">
+                  <h4 class="text-lg md:text-2xl font-black uppercase italic tracking-tight flex items-center gap-3 md:gap-4 text-slate-900 dark:text-white">
+                    <span class="text-brand text-2xl md:text-3xl">01</span> <span data-i18n="prin_1_title">Законность</span>
+                  </h4>
+                  <div class="faq-icon w-10 h-10 md:w-12 h-12 bg-slate-100 dark:bg-zinc-800 rounded-full flex items-center justify-center transition-transform duration-300 shrink-0 rotate-45 text-slate-900 dark:text-white"><i data-lucide="plus" class="w-4 h-4 md:w-5 md:h-5"></i></div>
+                </button>
+                <div class="faq-content grid grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-in-out">
+                  <div class="overflow-hidden">
+                    <div data-i18n="prin_1_desc" class="px-5 md:px-8 pb-5 md:pb-8 text-slate-600 dark:text-slate-400 font-bold text-sm md:text-lg leading-relaxed border-t-2 border-slate-100 dark:border-zinc-800 mx-5 md:mx-8 pt-5 md:pt-6 md:pl-14">
+                      Полное соответствие законодательству и абсолютно прозрачные условия сотрудничества.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="faq-item bg-white dark:bg-surface rounded-[2rem] md:rounded-[2.5rem] border border-slate-100 dark:border-zinc-800 overflow-hidden shadow-sm">
+                <button aria-expanded="false" class="faq-btn w-full p-5 md:p-8 flex justify-between items-center text-left hover:text-brand transition-colors group">
+                  <h4 class="text-lg md:text-2xl font-black uppercase italic tracking-tight flex items-center gap-3 md:gap-4 text-slate-900 dark:text-white">
+                    <span class="text-brand text-2xl md:text-3xl">02</span> <span data-i18n="prin_2_title">Дисциплина</span>
+                  </h4>
+                  <div class="faq-icon w-10 h-10 md:w-12 h-12 bg-slate-100 dark:bg-zinc-800 rounded-full flex items-center justify-center transition-transform duration-300 shrink-0 text-slate-900 dark:text-white"><i data-lucide="plus" class="w-4 h-4 md:w-5 md:h-5"></i></div>
+                </button>
+                <div class="faq-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-in-out">
+                  <div class="overflow-hidden">
+                    <div data-i18n="prin_2_desc" class="px-5 md:px-8 pb-5 md:pb-8 text-slate-600 dark:text-slate-400 font-bold text-sm md:text-lg leading-relaxed border-t-2 border-slate-100 dark:border-zinc-800 mx-5 md:mx-8 pt-5 md:pt-6 md:pl-14">
+                      Осуществляем строгий контроль всей кадровой документации и поддерживаем безупречную финансовую дисциплину.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq-item bg-white dark:bg-surface rounded-[2rem] md:rounded-[2.5rem] border border-slate-100 dark:border-zinc-800 overflow-hidden shadow-sm">
+                <button aria-expanded="false" class="faq-btn w-full p-5 md:p-8 flex justify-between items-center text-left hover:text-brand transition-colors group">
+                  <h4 class="text-lg md:text-2xl font-black uppercase italic tracking-tight flex items-center gap-3 md:gap-4 text-slate-900 dark:text-white">
+                    <span class="text-brand text-2xl md:text-3xl">03</span> <span data-i18n="prin_3_title">Ответственность</span>
+                  </h4>
+                  <div class="faq-icon w-10 h-10 md:w-12 h-12 bg-slate-100 dark:bg-zinc-800 rounded-full flex items-center justify-center transition-transform duration-300 shrink-0 text-slate-900 dark:text-white"><i data-lucide="plus" class="w-4 h-4 md:w-5 md:h-5"></i></div>
+                </button>
+                <div class="faq-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-in-out">
+                  <div class="overflow-hidden">
+                    <div data-i18n="prin_3_desc" class="px-5 md:px-8 pb-5 md:pb-8 text-slate-600 dark:text-slate-400 font-bold text-sm md:text-lg leading-relaxed border-t-2 border-slate-100 dark:border-zinc-800 mx-5 md:mx-8 pt-5 md:pt-6 md:pl-14">
+                      Абсолютная ответственность перед работодателем. Мы минимизируем ваши риски.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= 5. РАБОТОДАТЕЛЯМ (B2B) ================= -->
+        <section id="employers">
+          <div class="py-20 lg:py-32 px-4 md:px-6 bg-brand text-white relative overflow-hidden">
+            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000&fm=webp')] opacity-10 bg-cover bg-center mix-blend-overlay"></div>
+            <div class="max-w-[1440px] mx-auto relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <div class="reveal">
+                <span data-i18n="emp_subtitle" class="text-white/80 font-black text-[10px] md:text-[11px] uppercase tracking-[0.3em] block mb-4 md:mb-6 italic">B2B Партнерство</span>
+                <h2 data-i18n="emp_title" class="text-[clamp(3rem,6vw,5rem)] font-black italic uppercase tracking-tighter leading-none mb-6 md:mb-8">Для Работодателей.</h2>
+                <p data-i18n="emp_desc" class="text-lg md:text-xl font-bold text-white/90 mb-8 md:mb-10 leading-relaxed max-w-xl">
+                  DEHR Ltd предоставляет комплексное кадровое сопровождение. Мы минимизируем риски работодателя и обеспечиваем стабильность рабочих процессов.
+                </p>
+                <a href="#contact" data-i18n="btn_collab" class="inline-block bg-white text-brand px-8 md:px-10 py-4 md:py-5 rounded-full font-black uppercase text-[10px] md:text-[11px] tracking-[0.2em] hover:bg-black hover:text-white transition-all shadow-xl shadow-black/20 card-hover">
+                  Обсудить сотрудничество
+                </a>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 reveal reveal-delay-1">
+                <div class="bg-black/30 backdrop-blur-md p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-white/10 card-hover"><i data-lucide="search" class="w-6 h-6 md:w-8 md:h-8 text-white mb-4 md:mb-6"></i><h4 data-i18n="svc_1" class="text-base md:text-lg font-black uppercase italic mb-0 leading-tight">Подбор и проверка</h4></div>
+                <div class="bg-black/30 backdrop-blur-md p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-white/10 card-hover"><i data-lucide="file-signature" class="w-6 h-6 md:w-8 md:h-8 text-white mb-4 md:mb-6"></i><h4 data-i18n="svc_2" class="text-base md:text-lg font-black uppercase italic mb-0 leading-tight">Полное оформление</h4></div>
+                <div class="bg-black/30 backdrop-blur-md p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-white/10 card-hover"><i data-lucide="clipboard-check" class="w-6 h-6 md:w-8 md:h-8 text-white mb-4 md:mb-6"></i><h4 data-i18n="svc_3" class="text-base md:text-lg font-black uppercase italic mb-0 leading-tight">Контроль договоров</h4></div>
+                <div class="bg-black/30 backdrop-blur-md p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-white/10 card-hover"><i data-lucide="wallet" class="w-6 h-6 md:w-8 md:h-8 text-white mb-4 md:mb-6"></i><h4 data-i18n="svc_4" class="text-base md:text-lg font-black uppercase italic mb-0 leading-tight">Управление выплатами</h4></div>
+                <div class="bg-black/30 backdrop-blur-md p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-white/10 card-hover"><i data-lucide="briefcase" class="w-6 h-6 md:w-8 md:h-8 text-white mb-4 md:mb-6"></i><h4 data-i18n="svc_5" class="text-base md:text-lg font-black uppercase italic mb-0 leading-tight">Админ. сопровождение</h4></div>
+                <div class="bg-black/30 backdrop-blur-md p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-white/10 card-hover"><i data-lucide="refresh-cw" class="w-6 h-6 md:w-8 md:h-8 text-white mb-4 md:mb-6"></i><h4 data-i18n="svc_6" class="text-base md:text-lg font-black uppercase italic mb-0 leading-tight">Замена персонала</h4></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= 6. РЕКРУТИНГ (ПАРТНЕРСТВО) - БЕЛЫЙ ФОН ================= -->
+        <section id="recruiting" class="pt-24 pb-40 md:pt-32 md:pb-48 px-4 md:px-6 bg-white dark:bg-zinc-900 overflow-hidden relative z-10">
+          <div class="max-w-[1000px] mx-auto text-center relative z-20 reveal">
+            <span data-i18n="rec_badge_new" class="text-brand font-black text-[10px] md:text-[11px] uppercase tracking-[0.3em] block mb-4 md:mb-6 italic">Рекрутерам</span>
+            <h2 data-i18n="rec_title_new" class="text-[clamp(3rem,6vw,5rem)] font-black italic uppercase tracking-tighter leading-none mb-6 md:mb-8 text-slate-900 dark:text-white">Ищем <br>рекрутеров.</h2>
+            <p data-i18n="rec_desc_new" class="text-lg md:text-xl font-bold text-slate-600 dark:text-slate-400 mb-8 md:mb-10 leading-relaxed max-w-2xl mx-auto">
+              Компания DEHR ищет партнёров и рекрутеров, которые готовы приводить кандидатов на работу в Израиле. Вы передаёте нам кандидатов — мы занимаемся дальнейшим процессом трудоустройства.
+            </p>
+            <a href="#contact" data-i18n="btn_partner" class="inline-block bg-brand text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-black uppercase text-[10px] md:text-[11px] tracking-[0.2em] hover:bg-black dark:hover:bg-white dark:hover:text-black transition-all shadow-xl shadow-brand/20 card-hover">
+              Стать партнёром
+            </a>
+          </div>
+        </section>
+
+    </main>
+
+      <!-- ================= FOOTER ================= -->
+    <footer id="contact" class="bg-black text-white pt-24 pb-10 md:pt-32 md:pb-12 px-4 md:px-6 rounded-t-[2.5rem] md:rounded-t-[5rem] relative z-20 -mt-20 md:-mt-24 shadow-[0_-20px_50px_rgba(0,0,0,0.5)] border-t border-zinc-800">
+      <div class="max-w-[1440px] mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 mb-16 md:mb-24">
+        <div class="reveal">
+          <h2 class="text-[clamp(3.5rem,8vw,6rem)] font-black italic uppercase leading-none mb-8 md:mb-12">Let's <br /> Work.</h2>
+          <div class="mb-8 md:mb-12">
+            <p data-i18n="footer_contact" class="text-[9px] md:text-[10px] font-black uppercase text-zinc-500 tracking-[0.3em] mb-4">Прямая связь с руководителем</p>
+            <a href="https://wa.me/972548732037" target="_blank" rel="noopener noreferrer" aria-label="Telegram" class="text-3xl sm:text-4xl md:text-5xl font-black text-white hover:text-brand transition italic underline decoration-2 underline-offset-8 break-all">+972 54-873-2037</a>
+          </div>
+          <p data-i18n="footer_desc" class="text-zinc-500 font-bold max-w-sm text-xs md:text-sm">Надёжный персонал. Полное юридическое сопровождение. Безопасно. Законно. Профессионально.</p>
+        </div>
+        <div class="bg-zinc-900 border border-zinc-800 p-6 md:p-12 rounded-[2rem] md:rounded-[3.5rem] reveal reveal-delay-1">
+          
+          <!-- ФОРМА ОТПРАВКИ НАЧИНАЕТСЯ ЗДЕСЬ -->
+          <form action="https://formsubmit.co/sbagnenko2007@gmail.com" method="POST" class="space-y-6 md:space-y-8">
+            <input type="hidden" name="_subject" value="Новая заявка с сайта DEHR Ltd!">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            
+            <div class="space-y-3 md:space-y-4 border-b-2 border-zinc-800 pb-2 relative">
+              <label for="formName" data-i18n="form_name" class="text-[9px] md:text-[10px] font-black uppercase text-zinc-500 tracking-widest block">Имя *</label>
+              <input id="formName" name="Имя" type="text" data-i18n="form_name_ph_new" required placeholder="КАК К ВАМ ОБРАЩАТЬСЯ?" class="w-full bg-transparent outline-none text-lg md:text-xl font-black uppercase italic placeholder:text-zinc-700 focus:text-brand transition-colors" />
+            </div>
+            
+            <div class="space-y-3 md:space-y-4 border-b-2 border-zinc-800 pb-2 relative">
+              <label for="formPhone" data-i18n="form_phone" class="text-[9px] md:text-[10px] font-black uppercase text-zinc-500 tracking-widest block">Телефон *</label>
+              <input id="formPhone" name="Телефон" type="tel" data-i18n="form_phone_ph" required placeholder="+972 ..." class="w-full bg-transparent outline-none text-lg md:text-xl font-black uppercase italic placeholder:text-zinc-700 focus:text-brand transition-colors" />
+            </div>
+
+            <div class="space-y-3 md:space-y-4 border-b-2 border-zinc-800 pb-2 relative">
+              <label for="formEmail" data-i18n="form_email" class="text-[9px] md:text-[10px] font-black uppercase text-zinc-500 tracking-widest block">Почта</label>
+              <input id="formEmail" name="Почта" type="email" data-i18n="form_email_ph" placeholder="ВАША@ПОЧТА.COM" class="w-full bg-transparent outline-none text-lg md:text-xl font-black uppercase italic placeholder:text-zinc-700 focus:text-brand transition-colors" />
+            </div>
+
+            <div class="space-y-3 md:space-y-4 border-b-2 border-zinc-800 pb-2 relative">
+              <label for="formDesc" data-i18n="form_desc" class="text-[9px] md:text-[10px] font-black uppercase text-zinc-500 tracking-widest block">Описание сообщения *</label>
+              <textarea id="formDesc" name="Сообщение" required data-i18n="form_desc_ph" placeholder="..." rows="2" class="w-full bg-transparent outline-none text-lg md:text-xl font-black uppercase italic placeholder:text-zinc-700 resize-none focus:text-brand transition-colors"></textarea>
+            </div>
+            
+            <button type="submit" data-i18n="btn_submit" class="w-full bg-brand py-5 md:py-6 rounded-full font-black uppercase text-[10px] md:text-[11px] tracking-[0.2em] hover:bg-white hover:text-black transition-all shadow-xl shadow-brand/20">Оставить заявку</button>
+          </form>
+        </div>
+      </div>
+      
+      <!-- СОЦСЕТИ НАЧИНАЮТСЯ ЗДЕСЬ -->
+      <div class="max-w-[1440px] mx-auto pt-8 md:pt-10 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-6">
+        <span data-i18n="footer_copyright" class="text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] text-zinc-600 text-center">© 2024 DEHR Ltd. Strategic Workforce Solutions</span>
+        
+        <div class="flex items-center gap-6">
+          <a href="https://t.me/dehrcompany" target="_blank" class="text-zinc-600 hover:text-brand transition-colors" aria-label="Telegram">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.56 8.16l-1.92 9.04c-.14.65-.53.81-1.07.51l-2.96-2.18-1.43 1.38c-.16.16-.29.29-.6.29l.21-3.02 5.5-4.97c.24-.22-.05-.34-.37-.13l-6.8 4.28-2.93-.91c-.64-.2-.65-.64.13-.95l11.45-4.42c.53-.19 1 .13.79 1.08z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/dehrcompany/" target="_blank" class="text-zinc-600 hover:text-brand transition-colors" aria-label="Instagram">
+            <i data-lucide="instagram" class="w-5 h-5"></i>
+          </a>
+          <a href="https://www.tiktok.com/@dehrcompany" target="_blank" class="text-zinc-600 hover:text-brand transition-colors" aria-label="TikTok">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/groups/1179906024299856" target="_blank" class="text-zinc-600 hover:text-brand transition-colors" aria-label="Facebook">
+            <i data-lucide="facebook" class="w-5 h-5"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="app.js" defer></script>
+</body>
+</html>

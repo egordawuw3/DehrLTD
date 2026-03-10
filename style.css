@@ -1,0 +1,68 @@
+/* Базовые настройки */
+body {
+  font-weight: 500;
+  overflow-x: hidden;
+}
+
+/* Эффекты стекла (Glassmorphism) */
+.glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+.dark .glass {
+  background: rgba(5, 5, 5, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Карта Leaflet */
+#map {
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  border-radius: inherit;
+}
+.dark #map {
+  filter: invert(1) hue-rotate(180deg) brightness(0.85) contrast(1.2);
+}
+
+/* Hover-эффекты для карточек */
+.card-hover {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -10px rgba(37, 99, 235, 0.15);
+}
+
+/* Анимация появления скрытых вакансий */
+.vacancy-card {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.vacancy-card.hidden {
+  display: none !important;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.vacancy-card.fade-in {
+  display: flex !important;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================= АНИМАЦИИ ПОЯВЛЕНИЯ ПРИ СКРОЛЛЕ ================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 {
+  transition-delay: 0.15s;
+}
+
+/* RTL (Иврит) */
+[dir="rtl"] .gap-12 { gap: 3rem; }
