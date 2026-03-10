@@ -35,6 +35,18 @@ body {
   box-shadow: 0 20px 40px -10px rgba(37, 99, 235, 0.15);
 }
 
+/* Подвигаем блок зума чуть дальше от краев */
+.leaflet-top.leaflet-left {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+/* Если кнопки все равно режутся, добавляем скругление самим кнопкам */
+.leaflet-bar {
+    border: none !important; /* Убираем стандартную тонкую рамку */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important; /* Делаем мягкую тень */
+}
+
 /* Анимация появления скрытых вакансий */
 .vacancy-card {
   transition: opacity 0.5s ease, transform 0.5s ease;
