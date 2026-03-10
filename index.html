@@ -334,13 +334,15 @@
         </section>
 
         <!-- ================= 5. РАБОТОДАТЕЛЯМ (B2B) ================= -->
+        <!-- ================= 5. РАБОТОДАТЕЛЯМ (B2B) ================= -->
         <section id="employers">
           <div class="py-20 lg:py-32 px-4 md:px-6 bg-brand text-white relative overflow-hidden">
             <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000&fm=webp')] opacity-10 bg-cover bg-center mix-blend-overlay"></div>
             <div class="max-w-[1440px] mx-auto relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              <div class="reveal">
+              
+              <div class="reveal min-w-0">
                 <span data-i18n="emp_subtitle" class="text-white/80 font-black text-[10px] md:text-[11px] uppercase tracking-[0.3em] block mb-4 md:mb-6 italic">B2B Партнерство</span>
-                <h2 data-i18n="emp_title" class="text-[clamp(3rem,6vw,5rem)] font-black italic uppercase tracking-tighter leading-none mb-6 md:mb-8">Для Работодателей.</h2>
+                <h2 data-i18n="emp_title" class="text-4xl md:text-5xl lg:text-6xl font-black italic uppercase tracking-tighter leading-none mb-6 md:mb-8 break-words">Для Работодателей.</h2>
                 <p data-i18n="emp_desc" class="text-lg md:text-xl font-bold text-white/90 mb-8 md:mb-10 leading-relaxed max-w-xl">
                   DEHR Ltd предоставляет комплексное кадровое сопровождение. Мы минимизируем риски работодателя и обеспечиваем стабильность рабочих процессов.
                 </p>
@@ -348,17 +350,38 @@
                   Обсудить сотрудничество
                 </a>
               </div>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 reveal reveal-delay-1">
-                <div class="bg-black/30 backdrop-blur-md p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-white/10 card-hover"><i data-lucide="search" class="w-6 h-6 md:w-8 md:h-8 text-white mb-4 md:mb-6"></i><h4 data-i18n="svc_1" class="text-base md:text-lg font-black uppercase italic mb-0 leading-tight">Подбор и проверка</h4></div>
-                <div class="bg-black/30 backdrop-blur-md p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-white/10 card-hover"><i data-lucide="file-signature" class="w-6 h-6 md:w-8 md:h-8 text-white mb-4 md:mb-6"></i><h4 data-i18n="svc_2" class="text-base md:text-lg font-black uppercase italic mb-0 leading-tight">Полное оформление</h4></div>
-                <div class="bg-black/30 backdrop-blur-md p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-white/10 card-hover"><i data-lucide="clipboard-check" class="w-6 h-6 md:w-8 md:h-8 text-white mb-4 md:mb-6"></i><h4 data-i18n="svc_3" class="text-base md:text-lg font-black uppercase italic mb-0 leading-tight">Контроль договоров</h4></div>
-                <div class="bg-black/30 backdrop-blur-md p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-white/10 card-hover"><i data-lucide="wallet" class="w-6 h-6 md:w-8 md:h-8 text-white mb-4 md:mb-6"></i><h4 data-i18n="svc_4" class="text-base md:text-lg font-black uppercase italic mb-0 leading-tight">Управление выплатами</h4></div>
-                <div class="bg-black/30 backdrop-blur-md p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-white/10 card-hover"><i data-lucide="briefcase" class="w-6 h-6 md:w-8 md:h-8 text-white mb-4 md:mb-6"></i><h4 data-i18n="svc_5" class="text-base md:text-lg font-black uppercase italic mb-0 leading-tight">Админ. сопровождение</h4></div>
-                <div class="bg-black/30 backdrop-blur-md p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-white/10 card-hover"><i data-lucide="refresh-cw" class="w-6 h-6 md:w-8 md:h-8 text-white mb-4 md:mb-6"></i><h4 data-i18n="svc_6" class="text-base md:text-lg font-black uppercase italic mb-0 leading-tight">Замена персонала</h4></div>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 reveal reveal-delay-1 min-w-0">
+                <div class="bg-black/30 backdrop-blur-md p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-white/10 card-hover">
+                  <i data-lucide="search" class="w-6 h-6 md:w-8 md:h-8 text-white mb-4 md:mb-6"></i>
+                  <h4 data-i18n="svc_1" class="text-base md:text-lg font-black uppercase italic mb-0 leading-tight break-words">Подбор и проверка</h4>
+                </div>
+                <div class="bg-black/30 backdrop-blur-md p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-white/10 card-hover">
+                  <i data-lucide="file-signature" class="w-6 h-6 md:w-8 md:h-8 text-white mb-4 md:mb-6"></i>
+                  <h4 data-i18n="svc_2" class="text-base md:text-lg font-black uppercase italic mb-0 leading-tight break-words">Полное оформление</h4>
+                </div>
+                <div class="bg-black/30 backdrop-blur-md p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-white/10 card-hover">
+                  <i data-lucide="clipboard-check" class="w-6 h-6 md:w-8 md:h-8 text-white mb-4 md:mb-6"></i>
+                  <h4 data-i18n="svc_3" class="text-base md:text-lg font-black uppercase italic mb-0 leading-tight break-words">Контроль договоров</h4>
+                </div>
+                <div class="bg-black/30 backdrop-blur-md p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-white/10 card-hover">
+                  <i data-lucide="wallet" class="w-6 h-6 md:w-8 md:h-8 text-white mb-4 md:mb-6"></i>
+                  <h4 data-i18n="svc_4" class="text-base md:text-lg font-black uppercase italic mb-0 leading-tight break-words">Управление выплатами</h4>
+                </div>
+                <div class="bg-black/30 backdrop-blur-md p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-white/10 card-hover">
+                  <i data-lucide="briefcase" class="w-6 h-6 md:w-8 md:h-8 text-white mb-4 md:mb-6"></i>
+                  <h4 data-i18n="svc_5" class="text-base md:text-lg font-black uppercase italic mb-0 leading-tight break-words">Админ. сопровождение</h4>
+                </div>
+                <div class="bg-black/30 backdrop-blur-md p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-white/10 card-hover">
+                  <i data-lucide="refresh-cw" class="w-6 h-6 md:w-8 md:h-8 text-white mb-4 md:mb-6"></i>
+                  <h4 data-i18n="svc_6" class="text-base md:text-lg font-black uppercase italic mb-0 leading-tight break-words">Замена персонала</h4>
+                </div>
               </div>
+              
             </div>
           </div>
         </section>
+
 
         <!-- ================= 6. РЕКРУТИНГ (ПАРТНЕРСТВО) - БЕЛЫЙ ФОН ================= -->
         <section id="recruiting" class="pt-24 pb-40 md:pt-32 md:pb-48 px-4 md:px-6 bg-white dark:bg-zinc-900 overflow-hidden relative z-10">
