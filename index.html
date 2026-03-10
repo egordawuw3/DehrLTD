@@ -400,15 +400,16 @@
               <input id="formName" name="Имя" type="text" data-i18n="form_name_ph_new" required placeholder="КАК К ВАМ ОБРАЩАТЬСЯ?" class="w-full bg-transparent outline-none text-lg md:text-xl font-black uppercase italic placeholder:text-zinc-700 focus:text-brand transition-colors" />
             </div>
             
-            <div class="space-y-3 md:space-y-4 border-b-2 border-zinc-800 pb-2 relative">
-              <label for="formPhone" data-i18n="form_phone" class="text-[9px] md:text-[10px] font-black uppercase text-zinc-500 tracking-widest block">Телефон *</label>
-              <input id="formPhone" name="Телефон" type="tel" data-i18n="form_phone_ph" required placeholder="+972 ..." class="w-full bg-transparent outline-none text-lg md:text-xl font-black uppercase italic placeholder:text-zinc-700 focus:text-brand transition-colors" />
-            </div>
+<div class="space-y-3 md:space-y-4 border-b-2 border-zinc-800 pb-2 relative">
+  <label for="formPhone" data-i18n="form_phone" class="text-[9px] md:text-[10px] font-black uppercase text-zinc-500 tracking-widest block">Телефон \*</label>
+  <input id="formPhone" name="Телефон" type="tel" data-i18n="form_phone_ph" required placeholder="+972 ..." pattern="^\+?[0-9\s\-()]{9,20}$" title="Введите корректный номер телефона (допускаются цифры, +, пробелы, скобки и тире)" class="w-full bg-transparent outline-none text-lg md:text-xl font-black uppercase italic placeholder:text-zinc-700 focus:text-brand transition-colors" />
+</div>
 
-            <div class="space-y-3 md:space-y-4 border-b-2 border-zinc-800 pb-2 relative">
-              <label for="formEmail" data-i18n="form_email" class="text-[9px] md:text-[10px] font-black uppercase text-zinc-500 tracking-widest block">Почта</label>
-              <input id="formEmail" name="Почта" type="email" data-i18n="form_email_ph" placeholder="ВАША@ПОЧТА.COM" class="w-full bg-transparent outline-none text-lg md:text-xl font-black uppercase italic placeholder:text-zinc-700 focus:text-brand transition-colors" />
-            </div>
+<div class="space-y-3 md:space-y-4 border-b-2 border-zinc-800 pb-2 relative">
+  <label for="formEmail" data-i18n="form_email" class="text-[9px] md:text-[10px] font-black uppercase text-zinc-500 tracking-widest block">Почта</label>
+  <input id="formEmail" name="Почта" type="email" data-i18n="form_email_ph" placeholder="ВАША@ПОЧТА.COM" class="w-full bg-transparent outline-none text-lg md:text-xl font-black uppercase italic placeholder:text-zinc-700 focus:text-brand transition-colors" />
+</div>
+
 
             <div class="space-y-3 md:space-y-4 border-b-2 border-zinc-800 pb-2 relative">
               <label for="formDesc" data-i18n="form_desc" class="text-[9px] md:text-[10px] font-black uppercase text-zinc-500 tracking-widest block">Описание сообщения *</label>
