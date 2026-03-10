@@ -317,16 +317,19 @@ const locations = {
 function initMap() {
   const mapContainer = document.getElementById("map");
   if(mapContainer && typeof L !== 'undefined') {
-      // ИЗМЕНЕНИЕ ДЛЯ ТЕЛЕФОНОВ: dragging: true позволяет двигать карту пальцем
       map = L.map("map", { 
-        scrollWheelZoom: false, 
-        zoomControl: false, 
-        dragging: true 
+        zoomControl: true,       // Добавляет кнопки "+" и "-" (удобно для ПК и телефонов)
+        scrollWheelZoom: true,   // Приближение колесиком мыши (для ПК)
+        touchZoom: true,         // Приближение щипком двумя пальцами (для телефонов)
+        doubleClickZoom: true,   // Приближение двойным кликом/тапом
+        dragging: true           // Разрешает перемещение по карте пальцем или мышью
       }).setView([32.0853, 34.7818], 8); 
+      
       L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", { attribution: "" }).addTo(map);
       updateMapMarkers(document.documentElement.lang || 'ru');
   }
 }
+
 
 function updateMapMarkers(lang) {
   if (!map) return;
