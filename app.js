@@ -313,16 +313,16 @@ const locations = {
     { lat: 32.1624, lng: 34.8447, name: "Herzliya", he_name: "הרצליה", ru_name: "Герцлия" }
   ]
 };
-
 function initMap() {
   const mapContainer = document.getElementById("map");
   if(mapContainer && typeof L !== 'undefined') {
       map = L.map("map", { 
-        zoomControl: true,       // Добавляет кнопки "+" и "-" (удобно для ПК и телефонов)
-        scrollWheelZoom: true,   // Приближение колесиком мыши (для ПК)
-        touchZoom: true,         // Приближение щипком двумя пальцами (для телефонов)
-        doubleClickZoom: true,   // Приближение двойным кликом/тапом
-        dragging: true           // Разрешает перемещение по карте пальцем или мышью
+        attributionControl: false, // <-- ВОТ ЭТА СТРОЧКА УБИРАЕТ ВОТЕРМАРКУ
+        zoomControl: true,       
+        scrollWheelZoom: true,   
+        touchZoom: true,         
+        doubleClickZoom: true,   
+        dragging: true           
       }).setView([32.0853, 34.7818], 8); 
       
       L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", { attribution: "" }).addTo(map);
