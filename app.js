@@ -43,7 +43,7 @@ const translations = {
     form_phone: "Телефон *", form_phone_ph: "+972 ...", 
     form_email: "Почта", form_email_ph: "ВАША@ПОЧТА.COM",
     form_desc: "Описание сообщения *", form_desc_ph: "Расскажите подробнее...", 
-    btn_submit: "Оставить заявку", footer_copyright: "© 2024 DEHR Ltd. Strategic Workforce Solutions",
+    btn_submit: "Оставить заявку", footer_copyright: "© 2026 DEHR Ltd. Strategic Workforce Solutions",
     map_vacancies: "Вакансии", map_points: "Точки сбора", map_popup_vac: "Вакансия:", map_popup_gath: "Сбор из:",
     
     city_kat: "Кацрин", city_hol: "Холон", city_ash: "Ашдод", city_or: "Ор Иегуда", city_yeh: "Йехуд", city_rish: "Ришон", city_kir: "Кирьят-Арба", city_cent: "Центр", city_tlv: "Тель-Авив", city_ashk: "Ашкелон", city_rhash: "Р-Хашарон", city_rgan: "Рамат-Ган", city_gren: "Гренада",
@@ -69,7 +69,7 @@ const translations = {
     form_phone: "Phone *", form_phone_ph: "+972 ...", 
     form_email: "Email", form_email_ph: "YOUR@EMAIL.COM",
     form_desc: "Message *", form_desc_ph: "Tell us more...", 
-    btn_submit: "Submit Request", footer_copyright: "© 2024 DEHR Ltd.",
+    btn_submit: "Submit Request", footer_copyright: "© 2026 DEHR Ltd.",
     map_vacancies: "Vacancies", map_points: "Pickup Points", map_popup_vac: "Vacancy:", map_popup_gath: "Pickup from:",
 
     city_kat: "Katzrin", city_hol: "Holon", city_ash: "Ashdod", city_or: "Or Yehuda", city_yeh: "Yehud", city_rish: "Rishon", city_kir: "Kiryat Arba", city_cent: "Center", city_tlv: "Tel Aviv", city_ashk: "Ashkelon", city_rhash: "R-Hasharon", city_rgan: "Ramat Gan", city_gren: "Grenada",
@@ -95,7 +95,7 @@ const translations = {
     form_phone: "טלפון *", form_phone_ph: "+972 ...", 
     form_email: "דוא״ל", form_email_ph: "שלך@EMAIL.COM",
     form_desc: "הודעה *", form_desc_ph: "ספר לנו עוד...", 
-    btn_submit: "שלח", footer_copyright: "© 2024 DEHR Ltd.",
+    btn_submit: "שלח", footer_copyright: "© 2026 DEHR Ltd.",
     map_vacancies: "משרות", map_points: "נקודות איסוף", map_popup_vac: "משרה:", map_popup_gath: "איסוף מ:",
 
     city_kat: "קצרין", city_hol: "חולון", city_ash: "אשדוד", city_or: "אור יהודה", city_yeh: "יהוד", city_rish: "ראשון לציון", city_kir: "קרית ארבע", city_cent: "מרכז", city_tlv: "תל אביב", city_ashk: "אשקלון", city_rhash: "רמת השרון", city_rgan: "רמת גן", city_gren: "גרנדה",
