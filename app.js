@@ -313,11 +313,14 @@ const locations = {
     { lat: 32.1624, lng: 34.8447, name: "Herzliya", he_name: "הרצליה", ru_name: "Герцлия" }
   ]
 };
+// 1. Сначала оставляем твою функцию инициализации (с отключенной вотермаркой)
 function initMap() {
   const mapContainer = document.getElementById("map");
+  
+  // Проверяем, есть ли контейнер и загружена ли библиотека Leaflet (L)
   if(mapContainer && typeof L !== 'undefined') {
       map = L.map("map", { 
-        attributionControl: false, // <-- ВОТ ЭТА СТРОЧКА УБИРАЕТ ВОТЕРМАРКУ
+        attributionControl: false, // Убирает ссылку на Leaflet/Carto в углу
         zoomControl: true,       
         scrollWheelZoom: true,   
         touchZoom: true,         
@@ -325,9 +328,33 @@ function initMap() {
         dragging: true           
       }).setView([32.0853, 34.7818], 8); 
       
-      L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", { attribution: "" }).addTo(map);
+      L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", { 
+        attribution: "" 
+      }).addTo(map);
+
+      // Рисуем маркеры (функция должна быть определена в app.js)
       updateMapMarkers(document.documentElement.lang || 'ru');
   }
+}
+
+// 2. А теперь запускаем "наблюдатель", который вызовет эту функцию вовремя
+const mapTarget = document.getElementById("map");
+
+if (mapTarget) {
+    const mapObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            // Если блок карты появился в области видимости (или почти появился)
+            if (entry.isIntersecting) {
+                initMap(); 
+                observer.disconnect(); // Отключаем слежку, так как карта уже загружена
+            }
+        });
+    }, { 
+        // Начинаем загрузку за 300px до того, как пользователь увидит карту
+        rootMargin: "300px 0px" 
+    });
+
+    mapObserver.observe(mapTarget);
 }
 
 
