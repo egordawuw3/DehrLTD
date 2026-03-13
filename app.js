@@ -2,24 +2,24 @@
 const vacancies = [
     { city: "city_kat", title: "vac_1_t", price: "45₪/h", desc: "vac_1_d", img: "assets/plastic.jpg", fallback: "", tags: ["tag_12h", "tag_shifts"], hidden: false },
     { city: "city_hol", title: "vac_2_t", price: "44₪/h", desc: "vac_2_d", img: "assets/alyumenivi.jpg", fallback: "", tags: ["tag_bonus", "tag_men"], hidden: false },
-    { city: "city_ash", title: "vac_3_t", price: "45₪/h", desc: "vac_3_d", img: "assets/wood_box.jpg", fallback: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&fm=webp", tags: ["tag_up45", "tag_men"], hidden: false },
-    { city: "city_or", title: "vac_4_t", price: "55₪/h", desc: "vac_4_d", img: "assets/xt.jpg", fallback: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&fm=webp", tags: ["tag_train", "tag_flex"], hidden: true },
-    { city: "city_yeh", title: "vac_5_t", price: "50₪/h", desc: "vac_5_d", img: "assets/keitering.jpg", fallback: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&fm=webp", tags: ["tag_mw", "tag_up50"], hidden: true },
-    { city: "city_ash", title: "vac_6_t", price: "47₪/h", desc: "vac_6_d", img: "assets/meet-warehouse.jpg", fallback: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&fm=webp", tags: ["tag_food", "tag_flex"], hidden: true },
-    { city: "city_rish", title: "vac_7_t", price: "550₪/d", desc: "vac_7_d", img: "assets/rishon.jpg", fallback: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&fm=webp", tags: ["tag_height", "tag_men"], hidden: true },
-    { city: "city_kir", title: "vac_8_t", price: "60₪/h", desc: "vac_8_d", img: "assets/builder.jpg", fallback: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&fm=webp", tags: ["tag_transp", "tag_mw"], hidden: true },
-    { city: "city_cent", title: "vac_9_t", price: "55₪/h", desc: "vac_9_d", img: "assets/ot.png", fallback: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&fm=webp", tags: ["tag_transp", "tag_height"], hidden: true },
+    { city: "city_ash", title: "vac_3_t", price: "45₪/h", desc: "vac_3_d", img: "assets/wood_box.jpg", fallback: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=60&w=800&fm=webp", tags: ["tag_up45", "tag_men"], hidden: false },
+    { city: "city_or", title: "vac_4_t", price: "55₪/h", desc: "vac_4_d", img: "assets/xt.jpg", fallback: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=60&w=800&fm=webp", tags: ["tag_train", "tag_flex"], hidden: true },
+    { city: "city_yeh", title: "vac_5_t", price: "50₪/h", desc: "vac_5_d", img: "assets/keitering.jpg", fallback: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=60&w=800&fm=webp", tags: ["tag_mw", "tag_up50"], hidden: true },
+    { city: "city_ash", title: "vac_6_t", price: "47₪/h", desc: "vac_6_d", img: "assets/meet-warehouse.jpg", fallback: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=60&w=800&fm=webp", tags: ["tag_food", "tag_flex"], hidden: true },
+    { city: "city_rish", title: "vac_7_t", price: "550₪/d", desc: "vac_7_d", img: "assets/rishon.jpg", fallback: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=60&w=800&fm=webp", tags: ["tag_height", "tag_men"], hidden: true },
+    { city: "city_kir", title: "vac_8_t", price: "60₪/h", desc: "vac_8_d", img: "assets/builder.jpg", fallback: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=60&w=800&fm=webp", tags: ["tag_transp", "tag_mw"], hidden: true },
+    { city: "city_cent", title: "vac_9_t", price: "55₪/h", desc: "vac_9_d", img: "assets/ot.png", fallback: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=60&w=800&fm=webp", tags: ["tag_transp", "tag_height"], hidden: true },
     { city: "city_tlv", title: "vac_11_t", price: "65₪/h", desc: "vac_11_d", img: "assets/uborshik.png", fallback: "", tags: ["tag_women", "tag_flex"], hidden: true },
-    { city: "city_ashk", title: "vac_12_t", price: "45₪/h", desc: "vac_12_d", img: "assets/glass.png", fallback: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&fm=webp", tags: ["tag_shifts", "tag_mw"], hidden: true },
-    { city: "city_ash", title: "vac_13_t", price: "50₪/h", desc: "vac_13_d", img: "assets/podrostki.png", fallback: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&fm=webp", tags: ["tag_night", "tag_heb"], hidden: true },
-    { city: "city_rhash", title: "vac_14_t", price: "48₪/h", desc: "vac_14_d", img: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&fm=webp", fallback: "", tags: ["tag_women", "tag_flex"], hidden: true },
+    { city: "city_ashk", title: "vac_12_t", price: "45₪/h", desc: "vac_12_d", img: "assets/glass.png", fallback: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=60&w=800&fm=webp", tags: ["tag_shifts", "tag_mw"], hidden: true },
+    { city: "city_ash", title: "vac_13_t", price: "50₪/h", desc: "vac_13_d", img: "assets/podrostki.png", fallback: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=60&w=800&fm=webp", tags: ["tag_night", "tag_heb"], hidden: true },
+    { city: "city_rhash", title: "vac_14_t", price: "48₪/h", desc: "vac_14_d", img: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=60&w=800&fm=webp", fallback: "", tags: ["tag_women", "tag_flex"], hidden: true },
     { city: "city_tlv", title: "vac_15_t", price: "46₪/h", desc: "vac_15_d", img: "assets/nao-feka.png", fallback: "", tags: ["tag_shabbat", "tag_morn"], hidden: true },
     { city: "city_rgan", title: "vac_16_t", price: "46₪/h", desc: "vac_16_d", img: "assets/merkaz.png", fallback: "", tags: ["tag_up45", "tag_women"], hidden: true },
     { city: "city_tlv", title: "vac_17_t", price: "46₪/h", desc: "vac_17_d", img: "assets/domdushevnih.png", fallback: "", tags: ["tag_shabbat", "tag_up65"], hidden: true }
 ];
 
 const intVacancies = [
-    { city: "city_gren", title: "vac_int_t", price: "$2000/mo", desc: "vac_int_d", img: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=800&fm=webp", fallback: "", tags: ["tag_visa", "tag_house"] }
+    { city: "city_gren", title: "vac_int_t", price: "$2000/mo", desc: "vac_int_d", img: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=60&w=800&fm=webp", fallback: "", tags: ["tag_visa", "tag_house"] }
 ];
 
 // ================= СЛОВАРЬ ПЕРЕВОДОВ =================
@@ -163,10 +163,11 @@ let map;
 let mapMarkers = [];
 
 document.addEventListener('DOMContentLoaded', () => {
-  lucide.createIcons();
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
   renderVacancies();
   setLang('ru');
-  initMap();
   initScrollAnimations();
   initMobileMenu();
   initFAQ();
@@ -313,14 +314,13 @@ const locations = {
     { lat: 32.1624, lng: 34.8447, name: "Herzliya", he_name: "הרצליה", ru_name: "Герцлия" }
   ]
 };
-// 1. Сначала оставляем твою функцию инициализации (с отключенной вотермаркой)
+
 function initMap() {
   const mapContainer = document.getElementById("map");
   
-  // Проверяем, есть ли контейнер и загружена ли библиотека Leaflet (L)
   if(mapContainer && typeof L !== 'undefined') {
       map = L.map("map", { 
-        attributionControl: false, // Убирает ссылку на Leaflet/Carto в углу
+        attributionControl: false, 
         zoomControl: true,       
         scrollWheelZoom: true,   
         touchZoom: true,         
@@ -332,31 +332,26 @@ function initMap() {
         attribution: "" 
       }).addTo(map);
 
-      // Рисуем маркеры (функция должна быть определена в app.js)
       updateMapMarkers(document.documentElement.lang || 'ru');
   }
 }
 
-// 2. А теперь запускаем "наблюдатель", который вызовет эту функцию вовремя
 const mapTarget = document.getElementById("map");
 
 if (mapTarget) {
     const mapObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
-            // Если блок карты появился в области видимости (или почти появился)
             if (entry.isIntersecting) {
                 initMap(); 
-                observer.disconnect(); // Отключаем слежку, так как карта уже загружена
+                observer.disconnect(); 
             }
         });
     }, { 
-        // Начинаем загрузку за 300px до того, как пользователь увидит карту
         rootMargin: "300px 0px" 
     });
 
     mapObserver.observe(mapTarget);
 }
-
 
 function updateMapMarkers(lang) {
   if (!map) return;

@@ -1,3 +1,8 @@
+/* Директивы Tailwind для сборки */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Базовые настройки */
 body {
   font-weight: 500;
@@ -41,10 +46,10 @@ body {
     margin-left: 10px;
 }
 
-/* Если кнопки все равно режутся, добавляем скругление самим кнопкам */
+/* Скругление кнопкам карты */
 .leaflet-bar {
-    border: none !important; /* Убираем стандартную тонкую рамку */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important; /* Делаем мягкую тень */
+    border: none !important; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
 }
 
 /* Анимация появления скрытых вакансий */
@@ -62,7 +67,7 @@ body {
   transform: translateY(0);
 }
 
-/* ================= АНИМАЦИИ ПОЯВЛЕНИЯ ПРИ СКРОЛЛЕ ================= */
+/* АНИМАЦИИ ПОЯВЛЕНИЯ ПРИ СКРОЛЛЕ */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
