@@ -1,25 +1,30 @@
 // ================= БАЗА ДАННЫХ ВАКАНСИЙ =================
 const vacancies = [
-    { city: "city_kat", title: "vac_1_t", price: "45₪/h", desc: "vac_1_d", img: "assets/plastic.jpg", fallback: "", tags: ["tag_12h", "tag_shifts"], hidden: false },
-    { city: "city_hol", title: "vac_2_t", price: "44₪/h", desc: "vac_2_d", img: "assets/alyumenivi.jpg", fallback: "", tags: ["tag_bonus", "tag_men"], hidden: false },
-    { city: "city_ash", title: "vac_3_t", price: "45₪/h", desc: "vac_3_d", img: "assets/wood_box.jpg", fallback: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=60&w=800&fm=webp", tags: ["tag_up45", "tag_men"], hidden: false },
+    // 4 Новые вакансии в ТОП (видимые)
+    { city: "city_all", title: "vac_build_t", price: "60₪/h", desc: "vac_build_d", img: "assets/stroika.jpg", fallback: "https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=60&w=800&fm=webp", tags: ["tag_visa", "tag_men"], hidden: false },
+    { city: "city_yavne", title: "vac_alum_t", price: "43₪/h", desc: "vac_alum_d", img: "assets/yavne.jpg", fallback: "https://images.unsplash.com/photo-1611078813580-b2ccb309600f?q=60&w=800&fm=webp", tags: ["tag_bonus", "tag_food"], hidden: false },
+    { city: "city_beer", title: "vac_paper_t", price: "46₪/h", desc: "vac_paper_d", img: "assets/beer.jpg", fallback: "https://images.unsplash.com/photo-1605371924599-2d0365da1ae0?q=60&w=800&fm=webp", tags: ["tag_shifts"], hidden: false },
+    { city: "city_hol", title: "vac_bolt_t", price: "47₪/h", desc: "vac_bolt_d", img: "assets/bolti.jpg", fallback: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=60&w=800&fm=webp", tags: ["tag_mw"], hidden: false },
+    
+    // Старые видимые вакансии (оставим 2 штуки для ровного счета в 6 карточек)
+    { city: "city_kat", title: "vac_1_t", price: "45₪/h", desc: "vac_1_d", img: "assets/plastic.jpg", fallback: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=60&w=800&fm=webp", tags: ["tag_12h", "tag_shifts"], hidden: false },
+    { city: "city_hol", title: "vac_2_t", price: "44₪/h", desc: "vac_2_d", img: "assets/alyumenivi.jpg", fallback: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=60&w=800&fm=webp", tags: ["tag_bonus", "tag_men"], hidden: false },
+    
+    // Остальные скрываем под кнопку "Показать все"
+    { city: "city_ash", title: "vac_3_t", price: "45₪/h", desc: "vac_3_d", img: "assets/wood_box.jpg", fallback: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=60&w=800&fm=webp", tags: ["tag_up45", "tag_men"], hidden: true },
     { city: "city_or", title: "vac_4_t", price: "55₪/h", desc: "vac_4_d", img: "assets/xt.jpg", fallback: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=60&w=800&fm=webp", tags: ["tag_train", "tag_flex"], hidden: true },
     { city: "city_yeh", title: "vac_5_t", price: "50₪/h", desc: "vac_5_d", img: "assets/keitering.jpg", fallback: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=60&w=800&fm=webp", tags: ["tag_mw", "tag_up50"], hidden: true },
     { city: "city_ash", title: "vac_6_t", price: "47₪/h", desc: "vac_6_d", img: "assets/meet-warehouse.jpg", fallback: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=60&w=800&fm=webp", tags: ["tag_food", "tag_flex"], hidden: true },
     { city: "city_rish", title: "vac_7_t", price: "550₪/d", desc: "vac_7_d", img: "assets/rishon.jpg", fallback: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=60&w=800&fm=webp", tags: ["tag_height", "tag_men"], hidden: true },
     { city: "city_kir", title: "vac_8_t", price: "60₪/h", desc: "vac_8_d", img: "assets/builder.jpg", fallback: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=60&w=800&fm=webp", tags: ["tag_transp", "tag_mw"], hidden: true },
     { city: "city_cent", title: "vac_9_t", price: "55₪/h", desc: "vac_9_d", img: "assets/ot.png", fallback: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=60&w=800&fm=webp", tags: ["tag_transp", "tag_height"], hidden: true },
-    { city: "city_tlv", title: "vac_11_t", price: "65₪/h", desc: "vac_11_d", img: "assets/uborshik.png", fallback: "", tags: ["tag_women", "tag_flex"], hidden: true },
+    { city: "city_tlv", title: "vac_11_t", price: "65₪/h", desc: "vac_11_d", img: "assets/uborshik.png", fallback: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=60&w=800&fm=webp", tags: ["tag_women", "tag_flex"], hidden: true },
     { city: "city_ashk", title: "vac_12_t", price: "45₪/h", desc: "vac_12_d", img: "assets/glass.png", fallback: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=60&w=800&fm=webp", tags: ["tag_shifts", "tag_mw"], hidden: true },
     { city: "city_ash", title: "vac_13_t", price: "50₪/h", desc: "vac_13_d", img: "assets/podrostki.png", fallback: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=60&w=800&fm=webp", tags: ["tag_night", "tag_heb"], hidden: true },
     { city: "city_rhash", title: "vac_14_t", price: "48₪/h", desc: "vac_14_d", img: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=60&w=800&fm=webp", fallback: "", tags: ["tag_women", "tag_flex"], hidden: true },
     { city: "city_tlv", title: "vac_15_t", price: "46₪/h", desc: "vac_15_d", img: "assets/nao-feka.png", fallback: "", tags: ["tag_shabbat", "tag_morn"], hidden: true },
     { city: "city_rgan", title: "vac_16_t", price: "46₪/h", desc: "vac_16_d", img: "assets/merkaz.png", fallback: "", tags: ["tag_up45", "tag_women"], hidden: true },
     { city: "city_tlv", title: "vac_17_t", price: "46₪/h", desc: "vac_17_d", img: "assets/domdushevnih.png", fallback: "", tags: ["tag_shabbat", "tag_up65"], hidden: true }
-];
-
-const intVacancies = [
-    { city: "city_gren", title: "vac_int_t", price: "$2000/mo", desc: "vac_int_d", img: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=60&w=800&fm=webp", fallback: "", tags: ["tag_visa", "tag_house"] }
 ];
 
 // ================= СЛОВАРЬ ПЕРЕВОДОВ =================
@@ -36,8 +41,7 @@ const translations = {
     stats_subtitle: "Наши показатели", stats_title: "Опыт и <br /> <span class='text-brand'>Стабильность.</span>", adv_1: "Долгосрочные Контракты", adv_1_d: "С ведущими работодателями", adv_2: "Высокое Удержание", adv_2_d: "Минимальная текучесть", adv_3: "Полное Сопровождение", adv_3_d: "Абсолютная чистота",
     prin_subtitle: "Ценности", prin_1_title: "Законность", prin_1_desc: "Полное соответствие законодательству и абсолютно прозрачные условия сотрудничества.", prin_2_title: "Дисциплина", prin_2_desc: "Осуществляем строгий контроль всей кадровой документации и поддерживаем безупречную финансовую дисциплину.", prin_3_title: "Ответственность", prin_3_desc: "Абсолютная ответственность перед работодателем. Мы минимизируем ваши риски.",
     vacancies_title: "Открытые <br /> Вакансии.", btn_apply: "Откликнуться", btn_show_more: "Показать все вакансии",
-    int_subtitle: "International", int_title: "Вакансии за <span class='text-brand'>границей.</span>",
-    rec_badge_new: "Рекрутерам", rec_title_new: "Ищем <br> рекрутеров.", rec_desc_new: "Компания DEHR ищет партнёров и рекрутеров, которые готовы приводить кандидатов на работу в Израиле. Вы передаёте нам кандидатов — мы занимаемся дальнейшим процессом трудоустройства.", btn_partner: "Стать рекрутером",
+    rec_badge_new: "Рекрутерам", rec_title_new: "Ищем <br> рекрутеров.", rec_desc_new: "Компания DEHR ищет партнёров и рекрутеров, которые готовы приводить кандидатов на работу в Израиле. Вы передаёте нам кандидатов — мы занимаемся дальнейшим процессом трудоустройства.", btn_partner: "Стать партнером",
     footer_contact: "Прямая связь с руководителем", footer_desc: "Надёжный персонал. Полное юридическое сопровождение.", 
     form_name: "Имя *", form_name_ph_new: "КАК К ВАМ ОБРАЩАТЬСЯ?", 
     form_phone: "Телефон *", form_phone_ph: "+972 ...", 
@@ -46,9 +50,27 @@ const translations = {
     btn_submit: "Оставить заявку", footer_copyright: "© 2026 DEHR Ltd. Strategic Workforce Solutions",
     map_vacancies: "Вакансии", map_points: "Точки сбора", map_popup_vac: "Вакансия:", map_popup_gath: "Сбор из:",
     
-    city_kat: "Кацрин", city_hol: "Холон", city_ash: "Ашдод", city_or: "Ор Иегуда", city_yeh: "Йехуд", city_rish: "Ришон", city_kir: "Кирьят-Арба", city_cent: "Центр", city_tlv: "Тель-Авив", city_ashk: "Ашкелон", city_rhash: "Р-Хашарон", city_rgan: "Рамат-Ган", city_gren: "Гренада",
+    // ОТЗЫВЫ
+    test_badge: "Отзывы", test_title_1: "1000+ соискателей", test_title_2: "доверяют нам.", test_google: "на Google Reviews",
+    rev_1_loc: "Польша", rev_2_loc: "Франция", rev_3_loc: "Великобритания", rev_4_loc: "Германия", rev_5_loc: "Израиль",
+    rev_1_text: "\"Решил попробовать поработать в Израиле на несколько месяцев. Сначала были сомнения, но менеджер подробно рассказал про вакансии и условия. По приезду не пришлось ничего искать — сразу заселили, помогли с оформлением. Работа физическая, но оплачивается честно. Главное — всё прозрачно, без “подводных камней”.\"",
+    rev_2_text: "\"Нашёл вакансию через них, ехал с минимальным пониманием процесса. Очень помогли с документами и адаптацией на месте. Жильё предоставили, всё базовое есть. Отдельно отмечу, что всегда на связи — если есть вопросы, отвечают быстро. Для первого опыта в Израиле — отлично.\"",
+    rev_3_text: "\"Искал возможность поработать за границей и выбрал Израиль. Через эту компанию устроился на склад. Понравилось, что не бросают после приезда: помогли с оформлением, объяснили, как всё работает, где что находится. Жильё нормальное, без роскоши, но жить можно спокойно. Работой доволен.\"",
+    rev_4_text: "\"Работаю уже третий месяц. Всё, что обещали — в целом соответствует: встретили, заселили, помогли с документами. Зарплата приходит вовремя. Были мелкие бытовые вопросы по жилью, но их быстро решили. В целом — надёжный вариант, если хочешь поехать работать без лишней бюрократии.\"",
+    rev_5_text: "\"Помогли с трудоустройством и адаптацией. Несмотря на то, что я уже был в Израиле, всё равно были вопросы по документам и работе — закрыли быстро. Жильё предоставили на первое время, что сильно упростило старт. Работают чётко и без лишних обещаний.\"",
+
+    // ГОРОДА
+    city_kat: "Кацрин", city_hol: "Холон", city_ash: "Ашдод", city_or: "Ор Иегуда", city_yeh: "Йехуд", city_rish: "Ришон", city_kir: "Кирьят-Арба", city_cent: "Центр", city_tlv: "Тель-Авив", city_ashk: "Ашкелон", city_rhash: "Р-Хашарон", city_rgan: "Рамат-Ган", city_yavne: "Явне", city_beer: "Беэр-Яаков", city_all: "Весь Израиль",
+    
+    // ТЕГИ
     tag_12h: "12 часов", tag_shifts: "Смены", tag_bonus: "Бонусы", tag_men: "Мужчины", tag_up45: "До 45", tag_train: "Обучение", tag_flex: "Гибкий", tag_mw: "М/Ж", tag_up50: "До 50", tag_food: "Питание", tag_height: "Высота", tag_transp: "Подвозки", tag_women: "Женщины", tag_night: "Вечер/Ночь", tag_heb: "Иврит", tag_shabbat: "Шаббат 150%", tag_morn: "Утро", tag_up65: "До 65", tag_visa: "Виза", tag_house: "Жилье",
-    vac_1_t: "Работник на <br />завод", vac_1_d: "Сборка пластиковых ящиков. Жилье в пешей доступности.", vac_2_t: "Складовщик", vac_2_d: "Склад алюминиевых профилей. Бонус 2000₪.", vac_3_t: "Сборщик<br />ящиков", vac_3_d: "Сборка деревянных ящиков для судов.", vac_4_t: "Установщик <br />пигумов", vac_4_d: "Монтаж пигумов на фасадах.", vac_5_t: "Разнорабочий", vac_5_d: "Разнорабочий в кейтеринге.", vac_6_t: "Рабочий на <br />склад", vac_6_d: "Упаковка, сортировка мяса.", vac_7_t: "Установщик<br />окон", vac_7_d: "Установка окон в высотных зданиях.", vac_8_t: "Рабочий на <br />стройку", vac_8_d: "Строительство вилл. Есть подвозки.", vac_9_t: "Установщик<br />пигумов", vac_9_d: "Сборка люлек, установка пигумов.", vac_10_t: "Установщик<br />пигумов", vac_10_d: "Сборка люлек, установка пигумов.", vac_11_t: "Уборщик<br />квартир", vac_11_d: "Уборка квартир. Стажировка.", vac_12_t: "Мойщик<br />посуды", vac_12_d: "Уборка зала торжеств, мойка посуды.", vac_13_t: "Воспитатель", vac_13_d: "Присмотр за трудными подростками.", vac_14_t: "Уборщик<br />центрa", vac_14_d: "Уборка общественного центра.", vac_15_t: "Mishan<br />Naot-Afeka", vac_15_d: "Уборка. Шаббат - 150%.", vac_16_t: "Mishan<br />Merkaz", vac_16_d: "Уборка помещений. Шаббат - 150%.", vac_17_t: "Уборщик<br />душевных", vac_17_d: "Уборка помещений. Шаббат - 150%.", vac_int_t: "Автомеханик", vac_int_d: "Официальное приглашение, виза и жилье."
+    
+    // ВАКАНСИИ
+    vac_build_t: "Рабочий на<br/>стройку", vac_build_d: "По всему Израилю, В1 виза, продление визы.",
+    vac_alum_t: "Алюм. завод /<br/>Стеклопакеты", vac_alum_d: "Сверхурочные, премия 2000₪/год, 1500₪/квартал, питание.",
+    vac_paper_t: "Рабочий бум.<br/>завода", vac_paper_d: "Упаковка, сортировка рулонов бумаги.",
+    vac_bolt_t: "Разнорабочий<br/>на склад", vac_bolt_d: "Склад производства болтов.",
+    vac_1_t: "Работник на <br />завод", vac_1_d: "Сборка пластиковых ящиков. Жилье в пешей доступности.", vac_2_t: "Складовщик", vac_2_d: "Склад алюминиевых профилей. Бонус 2000₪.", vac_3_t: "Сборщик<br />ящиков", vac_3_d: "Сборка деревянных ящиков для судов.", vac_4_t: "Установщик <br />пигумов", vac_4_d: "Монтаж пигумов на фасадах.", vac_5_t: "Разнорабочий", vac_5_d: "Разнорабочий в кейтеринге.", vac_6_t: "Рабочий на <br />склад", vac_6_d: "Упаковка, сортировка мяса.", vac_7_t: "Установщик<br />окон", vac_7_d: "Установка окон в высотных зданиях.", vac_8_t: "Рабочий на <br />стройку", vac_8_d: "Строительство вилл. Есть подвозки.", vac_9_t: "Установщик<br />пигумов", vac_9_d: "Сборка люлек, установка пигумов.", vac_10_t: "Установщик<br />пигумов", vac_10_d: "Сборка люлек, установка пигумов.", vac_11_t: "Уборщик<br />квартир", vac_11_d: "Уборка квартир. Стажировка.", vac_12_t: "Мойщик<br />посуды", vac_12_d: "Уборка зала торжеств, мойка посуды.", vac_13_t: "Воспитатель", vac_13_d: "Присмотр за трудными подростками.", vac_14_t: "Уборщик<br />центрa", vac_14_d: "Уборка общественного центра.", vac_15_t: "Mishan<br />Naot-Afeka", vac_15_d: "Уборка. Шаббат - 150%.", vac_16_t: "Mishan<br />Merkaz", vac_16_d: "Уборка помещений. Шаббат - 150%.", vac_17_t: "Уборщик<br />душевных", vac_17_d: "Уборка помещений. Шаббат - 150%."
   },
   en: {
     nav_about: "About", nav_vacancies: "Vacancies", nav_principles: "Principles", nav_employers: "Employers", nav_recruiting: "Recruiting", btn_contact: "Contact Us",
@@ -62,7 +84,6 @@ const translations = {
     stats_subtitle: "Our Metrics", stats_title: "Experience & <br /> <span class='text-brand'>Stability.</span>", adv_1: "Long-term Contracts", adv_1_d: "With leading employers", adv_2: "High Retention", adv_2_d: "Minimal staff turnover", adv_3: "Full Legal Support", adv_3_d: "Absolute legal compliance",
     prin_subtitle: "Values", prin_1_title: "Legality", prin_1_desc: "Full compliance with the law and transparent cooperation conditions.", prin_2_title: "Discipline", prin_2_desc: "Strict control of HR and financial documentation.", prin_3_title: "Responsibility", prin_3_desc: "Absolute responsibility to the employer. We minimize your risks.",
     vacancies_title: "Open <br /> Vacancies.", btn_apply: "Apply Now", btn_show_more: "Show all vacancies",
-    int_subtitle: "International", int_title: "Jobs <span class='text-brand'>Abroad.</span>",
     rec_badge_new: "Partnership", rec_title_new: "Looking for <br>Partners.", rec_desc_new: "DEHR is looking for partners and recruiters ready to bring candidates for work in Israel. You provide the candidates — we handle the further employment process.", btn_partner: "Become a Partner",
     footer_contact: "Direct contact with CEO", footer_desc: "Reliable personnel. Full legal support.", 
     form_name: "Name *", form_name_ph_new: "HOW SHOULD WE ADDRESS YOU?", 
@@ -72,9 +93,22 @@ const translations = {
     btn_submit: "Submit Request", footer_copyright: "© 2026 DEHR Ltd.",
     map_vacancies: "Vacancies", map_points: "Pickup Points", map_popup_vac: "Vacancy:", map_popup_gath: "Pickup from:",
 
-    city_kat: "Katzrin", city_hol: "Holon", city_ash: "Ashdod", city_or: "Or Yehuda", city_yeh: "Yehud", city_rish: "Rishon", city_kir: "Kiryat Arba", city_cent: "Center", city_tlv: "Tel Aviv", city_ashk: "Ashkelon", city_rhash: "R-Hasharon", city_rgan: "Ramat Gan", city_gren: "Grenada",
+    test_badge: "Testimonials", test_title_1: "1000+ candidates", test_title_2: "trust us.", test_google: "on Google Reviews",
+    rev_1_loc: "Poland", rev_2_loc: "France", rev_3_loc: "UK", rev_4_loc: "Germany", rev_5_loc: "Israel",
+    rev_1_text: "\"Decided to try working in Israel for a few months. Had doubts at first, but the manager explained vacancies and conditions in detail. Didn't have to search for anything upon arrival — got housed immediately, helped with paperwork. Physical work, but paid fairly. Most importantly — everything is transparent, no hidden catches.\"",
+    rev_2_text: "\"Found a job through them, went with minimal understanding of the process. They really helped with documents and local adaptation. Housing provided, has all basics. Separately noting they're always in touch — if there are questions, they answer quickly. For a first experience in Israel — excellent.\"",
+    rev_3_text: "\"Looking for a chance to work abroad and chose Israel. Got a warehouse job through this company. Liked that they don't abandon you after arrival: helped with paperwork, explained how everything works, where things are. Housing is normal, no luxury, but you can live peacefully. Satisfied with the work.\"",
+    rev_4_text: "\"Working for my third month already. Everything promised generally matches reality: met me, housed me, helped with documents. Salary comes on time. There were minor household issues with housing, but resolved quickly. Overall — a reliable option if you want to go work without extra bureaucracy.\"",
+    rev_5_text: "\"Helped with employment and adaptation. Even though I was already in Israel, still had questions about documents and work — closed them quickly. Provided housing for the initial period, which greatly simplified the start. They work precisely and without empty promises.\"",
+
+    city_kat: "Katzrin", city_hol: "Holon", city_ash: "Ashdod", city_or: "Or Yehuda", city_yeh: "Yehud", city_rish: "Rishon", city_kir: "Kiryat Arba", city_cent: "Center", city_tlv: "Tel Aviv", city_ashk: "Ashkelon", city_rhash: "R-Hasharon", city_rgan: "Ramat Gan", city_yavne: "Yavne", city_beer: "Be'er Ya'akov", city_all: "All Israel",
     tag_12h: "12 Hours", tag_shifts: "Shifts", tag_bonus: "Bonuses", tag_men: "Men", tag_up45: "Up to 45", tag_train: "Training", tag_flex: "Flexible", tag_mw: "M/F", tag_up50: "Up to 50", tag_food: "Meals", tag_height: "At Height", tag_transp: "Transport", tag_women: "Women", tag_night: "Night", tag_heb: "Hebrew", tag_shabbat: "Shabbat 150%", tag_morn: "Morning", tag_up65: "Up to 65", tag_visa: "Visa", tag_house: "Housing",
-    vac_1_t: "Factory <br />Worker", vac_1_d: "Assembly of plastic boxes. Housing nearby.", vac_2_t: "Warehouse", vac_2_d: "Aluminum profile warehouse. 2000₪ bonus.", vac_3_t: "Box <br />Assembler", vac_3_d: "Assembly of wooden boxes for ships.", vac_4_t: "Scaffolding <br />Installer", vac_4_d: "Scaffolding installation on facades.", vac_5_t: "General Worker", vac_5_d: "General worker in catering.", vac_6_t: "Warehouse <br />Worker", vac_6_d: "Meat packaging and sorting.", vac_7_t: "Window<br />Installer", vac_7_d: "Installation of windows.", vac_8_t: "Construction", vac_8_d: "Construction of villas. Transport provided.", vac_9_t: "Scaffolding", vac_9_d: "Cradle assembly, scaffolding.", vac_10_t: "Scaffolding", vac_10_d: "Cradle assembly, scaffolding.", vac_11_t: "Apartment<br />Cleaner", vac_11_d: "Apartment cleaning.", vac_12_t: "Dishwasher", vac_12_d: "Washing dishes in event halls.", vac_13_t: "Youth Educator", vac_13_d: "Supervision of troubled teens.", vac_14_t: "Center<br />Cleaner", vac_14_d: "Cleaning of the community center.", vac_15_t: "Mishan<br />Naot-Afeka", vac_15_d: "Cleaning. Shabbat - 150%.", vac_16_t: "Mishan<br />Merkaz", vac_16_d: "Cleaning of premises. Shabbat - 150%.", vac_17_t: "Hostel<br />Cleaner", vac_17_d: "Cleaning. Shabbat - 150%.", vac_int_t: "Auto Mechanic", vac_int_d: "Official invitation, visa, and housing."
+    
+    vac_build_t: "Construction<br/>Worker", vac_build_d: "All over Israel, B1 visa, visa extension.",
+    vac_alum_t: "Aluminum<br/>Factory", vac_alum_d: "Overtime, 2000₪ yearly bonus, 1500₪ quarterly, meals.",
+    vac_paper_t: "Paper Factory<br/>Worker", vac_paper_d: "Packaging, sorting paper rolls.",
+    vac_bolt_t: "Warehouse<br/>Worker", vac_bolt_d: "Bolt production warehouse.",
+    vac_1_t: "Factory <br />Worker", vac_1_d: "Assembly of plastic boxes. Housing nearby.", vac_2_t: "Warehouse", vac_2_d: "Aluminum profile warehouse. 2000₪ bonus.", vac_3_t: "Box <br />Assembler", vac_3_d: "Assembly of wooden boxes for ships.", vac_4_t: "Scaffolding <br />Installer", vac_4_d: "Scaffolding installation on facades.", vac_5_t: "General Worker", vac_5_d: "General worker in catering.", vac_6_t: "Warehouse <br />Worker", vac_6_d: "Meat packaging and sorting.", vac_7_t: "Window<br />Installer", vac_7_d: "Installation of windows.", vac_8_t: "Construction", vac_8_d: "Construction of villas. Transport provided.", vac_9_t: "Scaffolding", vac_9_d: "Cradle assembly, scaffolding.", vac_10_t: "Scaffolding", vac_10_d: "Cradle assembly, scaffolding.", vac_11_t: "Apartment<br />Cleaner", vac_11_d: "Apartment cleaning.", vac_12_t: "Dishwasher", vac_12_d: "Washing dishes in event halls.", vac_13_t: "Youth Educator", vac_13_d: "Supervision of troubled teens.", vac_14_t: "Center<br />Cleaner", vac_14_d: "Cleaning of the community center.", vac_15_t: "Mishan<br />Naot-Afeka", vac_15_d: "Cleaning. Shabbat - 150%.", vac_16_t: "Mishan<br />Merkaz", vac_16_d: "Cleaning of premises. Shabbat - 150%.", vac_17_t: "Hostel<br />Cleaner", vac_17_d: "Cleaning. Shabbat - 150%."
   },
   he: {
     nav_about: "עלינו", nav_vacancies: "משרות", nav_principles: "עקרונות", nav_employers: "למעסיקים", nav_recruiting: "גיוס", btn_contact: "צור קשר",
@@ -88,7 +122,6 @@ const translations = {
     stats_subtitle: "המדדים שלנו", stats_title: "ניסיון ו<br /><span class='text-brand'>יציבות.</span>", adv_1: "חוזים ארוכי טווח", adv_1_d: "עם מעסיקים מובילים", adv_2: "שימור גבוה", adv_2_d: "תחלופת צוות מינימלית", adv_3: "תמיכה מלאה", adv_3_d: "עמידה משפטית מוחלטת",
     prin_subtitle: "ערכים", prin_1_title: "חוקיות", prin_1_desc: "עמידה מלאה בחוק ותנאים שקופים לחלוטין.", prin_2_title: "שליטה", prin_2_desc: "שליטה קפדנית בכל תיעוד משאבי האנוש ומשמעת פיננסית.", prin_3_title: "אחריות", prin_3_desc: "אחריות מוחלטת כלפי המעסיק. אנו ממזערים את הסיכונים שלך.",
     vacancies_title: "משרות <br /> פתוחות.", btn_apply: "הגש מועמדות", btn_show_more: "הצג את כל המשרות",
-    int_subtitle: "בינלאומי", int_title: "משרות <span class='text-brand'>בחו\"ל.</span>",
     rec_badge_new: "שותפות", rec_title_new: "מחפשים <br>שותפים.", rec_desc_new: "חברת DEHR מחפשת שותפים ומגייסים המוכנים להביא מועמדים לעבודה בישראל. אתם מעבירים לנו מועמדים — אנו מטפלים בהמשך תהליך ההעסקה.", btn_partner: "הפוך לשותף",
     footer_contact: "קשר ישיר עם המנכ\"ל", footer_desc: "צוות אמין. ליווי משפטי.", 
     form_name: "שם *", form_name_ph_new: "איך לפנות אליך?", 
@@ -98,16 +131,28 @@ const translations = {
     btn_submit: "שלח", footer_copyright: "© 2026 DEHR Ltd.",
     map_vacancies: "משרות", map_points: "נקודות איסוף", map_popup_vac: "משרה:", map_popup_gath: "איסוף מ:",
 
-    city_kat: "קצרין", city_hol: "חולון", city_ash: "אשדוד", city_or: "אור יהודה", city_yeh: "יהוד", city_rish: "ראשון לציון", city_kir: "קרית ארבע", city_cent: "מרכז", city_tlv: "תל אביב", city_ashk: "אשקלון", city_rhash: "רמת השרון", city_rgan: "רמת גן", city_gren: "גרנדה",
+    test_badge: "המלצות", test_title_1: "1000+ מועמדים", test_title_2: "סומכים עלינו.", test_google: "ב-Google Reviews",
+    rev_1_loc: "פולין", rev_2_loc: "צרפת", rev_3_loc: "בריטניה", rev_4_loc: "גרמניה", rev_5_loc: "ישראל",
+    rev_1_text: "\"החלטתי לנסות לעבוד בישראל כמה חודשים. בהתחלה היו ספקות, אבל המנהל הסביר בפירוט על המשרות והתנאים. לא הייתי צריך לחפש שום דבר עם ההגעה — שיכנו אותי מיד ועזרו בניירת. עבודה פיזית, אבל משלמים בהוגנות. הכי חשוב — הכל שקוף, בלי 'אותיות קטנות'.\"",
+    rev_2_text: "\"מצאתי משרה דרכם, נסעתי עם הבנה מינימלית של התהליך. עזרו מאוד עם המסמכים וההסתגלות במקום. סיפקו מגורים עם כל הציוד הבסיסי. אציין במיוחד שהם תמיד זמינים — אם יש שאלות, עונים מהר. לחוויה ראשונה בישראל — מצוין.\"",
+    rev_3_text: "\"חיפשתי הזדמנות לעבוד בחו\"ל ובחרתי בישראל. דרך החברה הזו התקבלתי למחסן. אהבתי שלא עוזבים אותך אחרי ההגעה: עזרו בניירת, הסבירו איך הכל עובד ואיפה כל דבר נמצא. המגורים סבירים, בלי מותרות, אבל אפשר לחיות בשקט. מרוצה מהעבודה.\"",
+    rev_4_text: "\"אני עובד כבר חודש שלישי. כל מה שהבטיחו תואם למציאות: פגשו אותי, שיכנו אותי, עזרו עם המסמכים. המשכורת מגיעה בזמן. היו בעיות ביתיות קטנות במגורים, אבל נפתרו מהר. באופן כללי — אפשרות אמינה אם רוצים לעבוד בלי ביורוקרטיה מיותרת.\"",
+    rev_5_text: "\"עזרו לי עם תעסוקה והסתגלות. למרות שכבר הייתי בישראל, עדיין היו שאלות על מסמכים ועבודה — טיפלו בהן מהר. סיפקו מגורים לתקופה הראשונה, מה שמאוד הקל על ההתחלה. עובדים בצורה מדויקת ובלי הבטחות סרק.\"",
+
+    city_kat: "קצרין", city_hol: "חולון", city_ash: "אשדוד", city_or: "אור יהודה", city_yeh: "יהוד", city_rish: "ראשון לציון", city_kir: "קרית ארבע", city_cent: "מרכז", city_tlv: "תל אביב", city_ashk: "אשקלון", city_rhash: "רמת השרון", city_rgan: "רמת גן", city_yavne: "יבנה", city_beer: "באר יעקב", city_all: "כל הארץ",
     tag_12h: "12 שעות", tag_shifts: "משמרות", tag_bonus: "בונוסים", tag_men: "גברים", tag_up45: "עד 45", tag_train: "הכשרה", tag_flex: "גמיש", tag_mw: "ג/נ", tag_up50: "עד 50", tag_food: "ארוחות", tag_height: "בגובה", tag_transp: "הסעות", tag_women: "נשים", tag_night: "לילה", tag_heb: "עברית", tag_shabbat: "שבת 150%", tag_morn: "בוקר", tag_up65: "עד 65", tag_visa: "ויזה", tag_house: "מגורים",
-    vac_1_t: "עובד <br />מפעל", vac_1_d: "הרכבת ארגזים. מגורים בקרבת מקום.", vac_2_t: "מחסנאי", vac_2_d: "מחסן פרופילי אלומיניום. בונוס 2000₪.", vac_3_t: "מרכיב <br />ארגזים", vac_3_d: "הרכבת ארגזים לספינות.", vac_4_t: "מתקין <br />פיגומים", vac_4_d: "התקנת פיגומים.", vac_5_t: "עובד כללי", vac_5_d: "עובד כללי בקייטרינג.", vac_6_t: "עובד מחסן", vac_6_d: "אריזה ומיון בשר.", vac_7_t: "מתקין<br />חלונות", vac_7_d: "התקנת חלונות.", vac_8_t: "פועל בניין", vac_8_d: "בניית וילות. הסעות.", vac_9_t: "מתקין פיגומים", vac_9_d: "הרכבת עריסות, התקנת פיגומים.", vac_10_t: "מתקין פיגומים", vac_10_d: "התקנת פיגומים.", vac_11_t: "מנקה דירות", vac_11_d: "ניקיון דירות.", vac_12_t: "שוטף כלים", vac_12_d: "ניקיון אולמות.", vac_13_t: "מדריך נוער", vac_13_d: "השגחה על נוער בסיכון.", vac_14_t: "מנקה מרכז", vac_14_d: "ניקיון מרכז קהילתי.", vac_15_t: "משען<br />נאות אפקה", vac_15_d: "ניקיון. שבת - 150%.", vac_16_t: "משען<br />מרכז", vac_16_d: "ניקיון. שבת - 150%.", vac_17_t: "מנקה<br />בהוסטל", vac_17_d: "ניקיון. שבת - 150%.", vac_int_t: "מכונאי רכב", vac_int_d: "הזמנה רשמית, ויזה ומגורים."
+    
+    vac_build_t: "פועל<br/>בניין", vac_build_d: "בכל רחבי הארץ, ויזת B1, הארכת ויזה.",
+    vac_alum_t: "עובד מפעל<br/>אלומיניום", vac_alum_d: "שעות נוספות, בונוס 2000₪ לשנה, 1500₪ לרבעון, ארוחות.",
+    vac_paper_t: "עובד מפעל<br/>נייר", vac_paper_d: "אריזה, מיון גלילי נייר.",
+    vac_bolt_t: "עובד<br/>מחסן", vac_bolt_d: "מחסן ייצור ברגים.",
+    vac_1_t: "עובד <br />מפעל", vac_1_d: "הרכבת ארגזים. מגורים בקרבת מקום.", vac_2_t: "מחסנאי", vac_2_d: "מחסן פרופילי אלומיניום. בונוס 2000₪.", vac_3_t: "מרכיב <br />ארגזים", vac_3_d: "הרכבת ארגזים לספינות.", vac_4_t: "מתקין <br />פיגומים", vac_4_d: "התקנת פיגומים.", vac_5_t: "עובד כללי", vac_5_d: "עובד כללי בקייטרינג.", vac_6_t: "עובד מחסן", vac_6_d: "אריזה ומיון בשר.", vac_7_t: "מתקין<br />חלונות", vac_7_d: "התקנת חלונות.", vac_8_t: "פועל בניין", vac_8_d: "בניית וילות. הסעות.", vac_9_t: "מתקין פיגומים", vac_9_d: "הרכבת עריסות, התקנת פיגומים.", vac_10_t: "מתקין פיגומים", vac_10_d: "התקנת פיגומים.", vac_11_t: "מנקה דירות", vac_11_d: "ניקיון דירות.", vac_12_t: "שוטף כלים", vac_12_d: "ניקיון אולמות.", vac_13_t: "מדריך נוער", vac_13_d: "השגחה על נוער בסיכון.", vac_14_t: "מנקה מרכז", vac_14_d: "ניקיון מרכז קהילתי.", vac_15_t: "משען<br />נאות אפקה", vac_15_d: "ניקיון. שבת - 150%.", vac_16_t: "משען<br />מרכז", vac_16_d: "ניקיון. שבת - 150%.", vac_17_t: "מנקה<br />בהוסטל", vac_17_d: "ניקיון. שבת - 150%."
   }
 };
 
 // ================= ГЕНЕРАЦИЯ ВАКАНСИЙ С LAZY LOADING =================
 function renderVacancies() {
   const container = document.getElementById("vacancies-grid");
-  const intContainer = document.getElementById("int-vacancies-grid");
   
   if(container) {
     container.innerHTML = vacancies.map((v) => `
@@ -126,30 +171,6 @@ function renderVacancies() {
           <p data-i18n="${v.desc}" class="text-[11px] md:text-xs text-slate-500 font-bold mb-4 line-clamp-2">Desc</p>
           <div class="flex gap-2 flex-wrap">
             ${v.tags.map(t => `<span data-i18n="${t}" class="px-2 md:px-3 py-1 bg-[#F2F4F7] dark:bg-zinc-800 rounded-full text-[8px] md:text-[9px] font-black uppercase text-slate-500 dark:text-slate-400">Tag</span>`).join('')}
-          </div>
-        </div>
-        <a href="#contact" data-i18n="btn_apply" class="w-full text-center bg-black dark:bg-white text-white dark:text-black py-4 md:py-5 rounded-full font-black uppercase text-[10px] md:text-[11px] tracking-widest hover:bg-brand dark:hover:bg-brand dark:hover:text-white transition-colors mt-auto block">Откликнуться</a>
-      </article>
-    `).join('');
-  }
-
-  if(intContainer) {
-    intContainer.innerHTML = intVacancies.map((v) => `
-      <article class="group bg-white dark:bg-surface p-4 rounded-[2rem] shadow-sm border border-slate-100 dark:border-zinc-800 flex flex-col card-hover">
-        <div class="relative h-40 md:h-48 overflow-hidden rounded-[1.5rem] mb-4 md:mb-6 bg-slate-200">
-          <img src="${v.img}" loading="lazy" width="800" height="500" onerror="this.src='${v.fallback}'" alt="Vacancy" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100" />
-          <div class="absolute top-4 left-4 bg-brand px-3 md:px-4 py-1 md:py-2 rounded-full shadow-md">
-            <span data-i18n="${v.city}" class="text-[9px] md:text-[10px] font-black uppercase tracking-widest text-white">City</span>
-          </div>
-        </div>
-        <div class="px-2 md:px-4 pb-4 flex-grow">
-          <div class="flex justify-between items-start mb-3 md:mb-4 gap-2">
-            <h3 data-i18n="${v.title}" class="text-lg md:text-xl font-black uppercase italic leading-none text-slate-900 dark:text-white">Title</h3>
-            <span class="text-lg md:text-xl font-black text-brand italic whitespace-nowrap" dir="ltr">${v.price}</span>
-          </div>
-          <p data-i18n="${v.desc}" class="text-[11px] md:text-xs text-slate-500 font-bold mb-4">Desc</p>
-          <div class="flex gap-2 flex-wrap">
-            ${v.tags.map(t => `<span data-i18n="${t}" class="px-2 md:px-3 py-1 bg-[#F2F4F7] dark:bg-zinc-800 rounded-full text-[8px] md:text-[9px] font-black uppercase text-slate-500">Tag</span>`).join('')}
           </div>
         </div>
         <a href="#contact" data-i18n="btn_apply" class="w-full text-center bg-black dark:bg-white text-white dark:text-black py-4 md:py-5 rounded-full font-black uppercase text-[10px] md:text-[11px] tracking-widest hover:bg-brand dark:hover:bg-brand dark:hover:text-white transition-colors mt-auto block">Откликнуться</a>
@@ -301,12 +322,20 @@ function setLang(lang) {
 // ================= ИНТЕРАКТИВНАЯ КАРТА (LEAFLET) =================
 const locations = {
   blue: [
-    { lat: 32.0853, lng: 34.7818, key: "city_tlv" }, { lat: 31.8044, lng: 34.6447, key: "city_ash" },
-    { lat: 32.9906, lng: 35.6967, key: "city_kat" }, { lat: 32.0158, lng: 34.7744, key: "city_hol" },
-    { lat: 32.0309, lng: 34.8566, key: "city_or" }, { lat: 32.0333, lng: 34.8833, key: "city_yeh" },
-    { lat: 31.9730, lng: 34.7925, key: "city_rish" }, { lat: 31.5283, lng: 35.1058, key: "city_kir" },
-    { lat: 31.6693, lng: 34.5715, key: "city_ashk" }, { lat: 32.1384, lng: 34.8404, key: "city_rhash" },
-    { lat: 32.0684, lng: 34.8248, key: "city_rgan" }
+    { lat: 32.0853, lng: 34.7818, key: "city_tlv" }, 
+    { lat: 31.8044, lng: 34.6447, key: "city_ash" },
+    { lat: 32.9906, lng: 35.6967, key: "city_kat" }, 
+    { lat: 32.0158, lng: 34.7744, key: "city_hol" },
+    { lat: 32.0309, lng: 34.8566, key: "city_or" }, 
+    { lat: 32.0333, lng: 34.8833, key: "city_yeh" },
+    { lat: 31.9730, lng: 34.7925, key: "city_rish" }, 
+    { lat: 31.5283, lng: 35.1058, key: "city_kir" },
+    { lat: 31.6693, lng: 34.5715, key: "city_ashk" }, 
+    { lat: 32.1384, lng: 34.8404, key: "city_rhash" },
+    { lat: 32.0684, lng: 34.8248, key: "city_rgan" },
+    { lat: 31.8779, lng: 34.7394, key: "city_yavne" }, // Явне
+    { lat: 31.9419, lng: 34.8322, key: "city_beer" }, // Беэр Яаков
+    { lat: 31.8903, lng: 35.0104, key: "city_all" }   // Центр (Модиин) для "Всего Израиля"
   ],
   red: [
     { lat: 32.0136, lng: 34.7480, name: "Bat-Yam", he_name: "בת ים", ru_name: "Бат-Ям" },
